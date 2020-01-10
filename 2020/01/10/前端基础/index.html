@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>bofan&#39;s blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="bofan&#39;s blog">
+  <title>前端基础 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 前端 ">
+  <meta name="description" content="前端基础 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -50,7 +50,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar_zero.jpg" />
@@ -303,12 +303,55 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-前端基础" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网站来源"><span class="toc-text">网站来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解（来源主题作者对博客的理解）"><span class="toc-text">对博客的理解（来源主题作者对博客的理解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于昕雨"><span class="toc-text">关于昕雨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">前端基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="前端">前端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">前端</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-01-10 18:10:26'>2020-01-10 18:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-S和B-S"><span class="toc-text">C&#x2F;S和B&#x2F;S</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-S架构："><span class="toc-text">C&#x2F;S架构：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-S架构"><span class="toc-text">B&#x2F;S架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点：-1"><span class="toc-text">特点：</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -321,45 +364,71 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="网站来源"><a href="#网站来源" class="headerlink" title="网站来源"></a>网站来源</h2><blockquote>
-<p>框架：基于hexo和github pages提供的个人博客服务。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C-S和B-S"><a href="#C-S和B-S" class="headerlink" title="C/S和B/S"></a>C/S和B/S</h1><p>目前市面上的软件架构分为C/S架构和B/S架构</p>
+<h2 id="C-S架构："><a href="#C-S架构：" class="headerlink" title="C/S架构："></a>C/S架构：</h2><ol>
+<li>一般使用的软件都是C/S架构</li>
+<li>比如系统软件中的360、QQ、ofice、等</li>
+<li>C表示客户端，用户通过客户端来使用软件</li>
+<li>S表示服务器，服务器负责处理软件的业务逻辑<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3></li>
+<li>软件使用前必须得安装</li>
+<li>软件更新时，服务器和客户端得同时更新</li>
+<li>C/S架构不能跨平台使用 各自平台对应各自版本</li>
+<li>C/S架构的软件客户端和服务通信采用的是自有的协议，相对来说比较安全</li>
+</ol>
+<h2 id="B-S架构"><a href="#B-S架构" class="headerlink" title="B/S架构"></a>B/S架构</h2><ol>
+<li>B/S本质上也是C/S，只不过B/S架构的软件，通过使用浏览器作为软件的客户端</li>
+<li>B/S架构的软件通过使用浏览器访问网页的形式，来使用软件</li>
+<li>比如：京东，淘宝，知乎等<h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3></li>
+<li>软件不需要安装，直接使用浏览器访问指定的网页即可</li>
+<li>软件更新时，客户端不需要更新</li>
+<li>软件可以跨平台，只要系统中有浏览器，就可以使用</li>
+<li>B/S架构的软件，客户端和服务器之间通信采用的是通用的HTTP协议，相对来说不安全。HTTPS协议相对来说比HTTP更加安全 </li>
+</ol>
+<blockquote>
+<p><font color="red">结构-HTML用于描述页面的结构</font></p>
 </blockquote>
 <blockquote>
-<p>主题：来自GitHub上杨玉杰的开源项目<a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a>，非常感谢原作者提供这么漂亮的主题！</p>
+<p><font color="red">表现-CSS用于控制页面元素的样式</font></p>
 </blockquote>
 <blockquote>
-<p>本网站于2020/1/10构建,很遗憾作为一名软件专业相关的学生,到大三才有自己的个人网站，且本网站是由开源工具和该开源项目构建的，构建过程无任何编码。</p>
+<p><font color="red">行为-JavaScript用于响应用户操作</font></p>
 </blockquote>
-<h2 id="对博客的理解（来源主题作者对博客的理解）"><a href="#对博客的理解（来源主题作者对博客的理解）" class="headerlink" title="对博客的理解（来源主题作者对博客的理解）"></a>对博客的理解（来源主题作者对博客的理解）</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于昕雨"><a href="#关于昕雨" class="headerlink" title="关于昕雨"></a>关于昕雨</h2><p>**** 昕雨是范博的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>前端基础</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="昕雨">昕雨</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-01-10, 18:00:00</p>
+    <p><span class="copy-title">最后更新:</span>2020-01-10, 18:10:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/10/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="前端基础">http://yoursite.com/2020/01/10/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
