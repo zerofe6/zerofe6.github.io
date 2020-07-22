@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础_DQL_基础查询 | bofan&#39;s blog</title>
+  <title>MySQL基础-DQL-条件查询 | bofan&#39;s blog</title>
   <meta name="keywords" content=" 数据库 , mysql ">
-  <meta name="description" content="MySQL基础_DQL_基础查询 | bofan&#39;s blog">
+  <meta name="description" content="MySQL基础-DQL-条件查询 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
@@ -389,9 +389,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-DQL-基础查询" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-条件查询" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础_DQL_基础查询</h1>
+        <h1 class="article-title">MySQL基础-DQL-条件查询</h1>
     
     <div class="article-meta">
         
@@ -415,7 +415,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-22 16:21:59'>2020-06-03 20:05</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-22 16:40:39'>2020-07-22 16:39</time>
         
     </div>
     <div class="article-meta">
@@ -437,7 +437,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL基础-DQL"><span class="toc-text">MySQL基础_DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例表"><span class="toc-text">示例表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础查询"><span class="toc-text">基础查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶一：基础查询"><span class="toc-text">进阶一：基础查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-查询单个字段"><span class="toc-text">1.查询单个字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-查询表中的多个字段"><span class="toc-text">2.查询表中的多个字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-查询表中的所有字段"><span class="toc-text">3.查询表中的所有字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-查询常量值"><span class="toc-text">4.查询常量值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-查询表达式"><span class="toc-text">5.查询表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-查询函数"><span class="toc-text">6.查询函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-为字段取别名"><span class="toc-text">7.为字段取别名</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#方式一：使用as"><span class="toc-text">方式一：使用as</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#方式二：使用空格"><span class="toc-text">方式二：使用空格</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#案例：查询salary-显示结果为out-put-加上双引号或着重符号"><span class="toc-text">案例：查询salary 显示结果为out put(加上双引号或着重符号)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-去重"><span class="toc-text">8.去重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#案例：查询员工表中涉及的所有部门编号"><span class="toc-text">案例：查询员工表中涉及的所有部门编号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-的作用"><span class="toc-text">9.+的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#案例；查询员工名和姓连接成一个字段，并显示为-姓名-concat-函数"><span class="toc-text">案例；查询员工名和姓连接成一个字段，并显示为 姓名 concat 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#此处-commission-pct-为-null-则结果为null"><span class="toc-text">此处  commission_pct 为 null 则结果为null</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#判断是否为null"><span class="toc-text">判断是否为null</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL条件-DQL"><span class="toc-text">MySQL条件_DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例表"><span class="toc-text">示例表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进阶一：条件查询"><span class="toc-text">进阶一：条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-简单条件运算符"><span class="toc-text">1. 简单条件运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-逻辑运算符查询"><span class="toc-text">2.  逻辑运算符查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-模糊查询"><span class="toc-text">3. 模糊查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#经典面试题"><span class="toc-text">经典面试题</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -453,58 +453,183 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MySQL基础-DQL"><a href="#MySQL基础-DQL" class="headerlink" title="MySQL基础_DQL"></a>MySQL基础_DQL</h1><h2 id="示例表"><a href="#示例表" class="headerlink" title="示例表"></a>示例表</h2><pre><code>员工表：员工编号、名、姓 、邮箱、电话号码、工种编号、薪水、奖金率、上级领导员工编号、部门编号、入职日期</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf898e2cs3j30wd0bvmxp.jpg" alt="员工表"></p>
+        <h1 id="MySQL条件-DQL"><a href="#MySQL条件-DQL" class="headerlink" title="MySQL条件_DQL"></a>MySQL条件_DQL</h1><h2 id="示例表"><a href="#示例表" class="headerlink" title="示例表"></a>示例表</h2><pre><code>员工表：员工编号、名、姓 、邮箱、电话号码、工种编号、薪水、奖金率、上级领导员工编号、部门编号、入职日期</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf898e2cs3j30wd0bvmxp.jpg" alt="员工表"></p>
 <pre><code>部门表：部门编号、部门名称、部门领导的员工编号、位置编号</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf89vzdlf2j30vu066mxe.jpg" alt></p>
 <pre><code>位置表：位置编号、街道、邮编、城市、省份、国家编号</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf89zn1g4jj30vz07u74i.jpg" alt></p>
 <pre><code>工种表：工种编号、工种名称、最低工资、最高工资</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf8a16ow3hj30qd06q0ss.jpg" alt></p>
-<h2 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h2><h3 id="进阶一：基础查询"><a href="#进阶一：基础查询" class="headerlink" title="进阶一：基础查询"></a>进阶一：基础查询</h3><pre><code>/*
-SELECT 查询列表FROM 表;
-特点：
-查询列表可以为：表中的字段、常量值、表达式、函数
-查询的结果为一个虚拟表格
+<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><h3 id="进阶一：条件查询"><a href="#进阶一：条件查询" class="headerlink" title="进阶一：条件查询"></a>进阶一：条件查询</h3><pre><code class="sql">#进阶2：条件查询
+/*
+语法：
+    select 查询列表
+    from 
+                    表名
+    where     筛选条件
+
+分类：
+                一、按条件表达式筛选
+                        简单条件运算符 &lt; &gt; !=(&lt;&gt;) &lt;= &gt;=
+                二、按逻辑表达式筛选
+                        逻辑运算符: &amp;&amp; || !
+                                                and  or not
+                        作用：用于连接条件表达式
+                三、模糊查询
+                        like
+                        between and 
+                        in 
+                        is null
+*/</code></pre>
+<h4 id="1-简单条件运算符"><a href="#1-简单条件运算符" class="headerlink" title="1. 简单条件运算符"></a>1. 简单条件运算符</h4><p>&lt;    &gt;    =    &lt;&gt;    &lt;=&gt;    安全等于 &lt;=    &gt;= </p>
+<pre><code class="sql">#案例一：查询员工工资大于12000的员工信息
+select 
+            * 
+from 
+            employees
+where 
+            employees.salary&gt;12000
+
+#案例二：查询部门编号不等于90号的员工名 和 部门编号
+select 
+            employees.department_id as  部门编号 ,CONCAT(employees.first_name,&#39; &#39;,employees.last_name) as 姓名
+from  
+            employees
+where  
+            employees.department_id &lt;&gt; 90</code></pre>
+<h4 id="2-逻辑运算符查询"><a href="#2-逻辑运算符查询" class="headerlink" title="2.  逻辑运算符查询"></a>2.  逻辑运算符查询</h4><p>and    or     not</p>
+<pre><code class="sql">#案例一：工资在10000 到 20000 之间的员工名 、 工资 以及 奖金
+select 
+            CONCAT(employees.first_name,&#39;.&#39;,last_name) as 姓名,
+            employees.salary as  工资,
+            employees.commission_pct as 奖金
+from 
+            employees
+WHERE  
+            salary&gt;=10000 and salary&lt;=20000
+
+# 案例二：查询部门编号不是在90到110之间 ， 或者工资高于15000的 员工信息
+select 
+            * 
+from  
+            employees
+where 
+            not (department_id&gt;=90 and department_id&lt;=110) or salary&gt;15000
+</code></pre>
+<h4 id="3-模糊查询"><a href="#3-模糊查询" class="headerlink" title="3. 模糊查询"></a>3. 模糊查询</h4><p>like    betweent and    is null     is nut null</p>
+<ul>
+<li><font color="red">like 一般搭配通配符使用，用于判断字符型和数值型, 通配符：%任意多个字符 _任意单个字符</font></li>
+</ul>
+<pre><code class="sql"># 三：模糊查询
+/* 1.like :
+                    特点：①一般和通配符搭配使用
+                                            通配符：%   任意多个字符（包含0个字符）
+                                                            _   任意单个字符
+
+*/        
+# 案例一：查询员工名中包含字符a的员工信息
+select 
+            *
+from 
+            employees
+where 
+            last_name LIKE &#39;%a%&#39;
+
+#案例二： 查询员工名中第三个字符为e  第五个字符 为a 的员工名和工资
+select 
+            last_name as 员工名 ,
+            salary  as  薪水
+from 
+      employees
+where 
+            last_name like &#39;__n_l%&#39; 
+
+#案例三：查询员工名中第二个字符为_的员工名  使用转义字符
+select 
+            last_name
+from 
+            employees
+WHERE 
+            last_name like &#39;_$_%&#39; ESCAPE &#39;$&#39; 
+
+
+
+#2. between and 
+/*
+使用between and能提高语句的简洁度
+两个临界值的大小顺序不能变换
 */
-use myemployees;</code></pre><h4 id="1-查询单个字段"><a href="#1-查询单个字段" class="headerlink" title="1.查询单个字段"></a>1.查询单个字段</h4><pre><code>select last_name from employees;</code></pre><h4 id="2-查询表中的多个字段"><a href="#2-查询表中的多个字段" class="headerlink" title="2.查询表中的多个字段"></a>2.查询表中的多个字段</h4><pre><code>select last_name,salary,email from employees;</code></pre><h4 id="3-查询表中的所有字段"><a href="#3-查询表中的所有字段" class="headerlink" title="3.查询表中的所有字段"></a>3.查询表中的所有字段</h4><pre><code>select * from employees;</code></pre><h4 id="4-查询常量值"><a href="#4-查询常量值" class="headerlink" title="4.查询常量值"></a>4.查询常量值</h4><pre><code>select 100;
-select &#39;你好啊&#39;;</code></pre><h4 id="5-查询表达式"><a href="#5-查询表达式" class="headerlink" title="5.查询表达式"></a>5.查询表达式</h4><pre><code>select 100*158*98;
-select 100%92;</code></pre><h4 id="6-查询函数"><a href="#6-查询函数" class="headerlink" title="6.查询函数"></a>6.查询函数</h4><pre><code>select VERSION();</code></pre><h4 id="7-为字段取别名"><a href="#7-为字段取别名" class="headerlink" title="7.为字段取别名"></a>7.为字段取别名</h4><pre><code>/*
-便于理解
-如果要查询的字段有重名的情况，使用别名可以区分开来
-*/</code></pre><h6 id="方式一：使用as"><a href="#方式一：使用as" class="headerlink" title="方式一：使用as"></a>方式一：使用as</h6><pre><code>select 100*98 AS 结果;
-SELECT last_name AS 姓, first_name AS 名 from employees;</code></pre><h6 id="方式二：使用空格"><a href="#方式二：使用空格" class="headerlink" title="方式二：使用空格"></a>方式二：使用空格</h6><pre><code>SELECT last_name 姓, first_name  名 from employees;</code></pre><h4 id="案例：查询salary-显示结果为out-put-加上双引号或着重符号"><a href="#案例：查询salary-显示结果为out-put-加上双引号或着重符号" class="headerlink" title="案例：查询salary 显示结果为out put(加上双引号或着重符号)"></a>案例：查询salary 显示结果为out put(加上双引号或着重符号)</h4><pre><code>select salary `out put` from employees;
-select salary &quot;out put&quot; from employees;</code></pre><h4 id="8-去重"><a href="#8-去重" class="headerlink" title="8.去重"></a>8.<font color="red">去重</font></h4><h4 id="案例：查询员工表中涉及的所有部门编号"><a href="#案例：查询员工表中涉及的所有部门编号" class="headerlink" title="案例：查询员工表中涉及的所有部门编号"></a>案例：查询员工表中涉及的所有部门编号</h4><pre><code>select department_id from employees;
-select distinct department_id from employees;</code></pre><h4 id="9-的作用"><a href="#9-的作用" class="headerlink" title="9.+的作用"></a>9.<font color="red">+的作用</font></h4><pre><code>/*
-mysql 中的+只为运算符
-select 100+90;
-两个操作数都为数值型，则做加法运算
-select &#39;100&#39; + 90;
-其中一方为字符型，试图将字符型数值转为数值型，
-select &#39;100&#39; + 90;  如果转换成功则，继续做加法运算.
-select &#39;jone&#39; + 90; 若失败，则将字符型转换为0    
-select null+10;  只要其中一方为null则结果肯定为null
-*/</code></pre><h4 id="案例；查询员工名和姓连接成一个字段，并显示为-姓名-concat-函数"><a href="#案例；查询员工名和姓连接成一个字段，并显示为-姓名-concat-函数" class="headerlink" title="案例；查询员工名和姓连接成一个字段，并显示为 姓名 concat 函数"></a>案例；查询员工名和姓连接成一个字段，并显示为 姓名 concat 函数</h4><pre><code>select last_name+first_name as 姓名
-from employees
+#案例一：查询员工编号在100 到 120 之间的员工信息
+select 
+                *
+from 
+       employees
+where  
+             employee_id BETWEEN 100 and 120
 
-select CONCAT(last_name,&#39; &#39;,first_name) as 姓名
-from employees
+#三 in：判断某字段的值是否为列表中的某一项  
+                使用in提高语句的简洁度
+                in列表的值类型 必须统一或兼容
+#案例一：查询员工的工种编号是 IT_PROG AD_VP  、 AD_PRES中的一个员工名和工种编号
+SELECT
+            last_name  as 姓名,
+            job_id  as  工种编号
+from 
+            employees
+where 
+            job_id in(&#39;IT_PROG&#39;,&#39;AD_VP&#39;,&#39;AD_PRES&#39;)
 
-desc  departments;
-SELECT * from departments;
-select * from employees;
-select DISTINCT(job_id) from employees;</code></pre><h5 id="此处-commission-pct-为-null-则结果为null"><a href="#此处-commission-pct-为-null-则结果为null" class="headerlink" title="此处  commission_pct 为 null 则结果为null"></a>此处  commission_pct 为 null 则结果为null</h5><pre><code>select 
-CONCAT(employees.employee_id,&#39;,&#39;,employees.first_name,&#39;,&#39;,employees.last_name,&#39;,&#39;,
-employees.salary,&#39;,&#39;,employees.phone_number,&#39;,&#39;,employees.manager_id,&#39;,&#39;,
-employees.job_id,&#39;,&#39;,employees.hiredate,&#39;,&#39;,employees.email
-)
-as &quot;out_put&quot; 
-from employees;</code></pre><h5 id="判断是否为null"><a href="#判断是否为null" class="headerlink" title="判断是否为null"></a><font color="red">判断是否为null</font></h5><pre><code>select  IFNULL(employees.commission_pct,0) AS 奖金率 from employees;
+
+
+# 4. is null 的使用 : 
+                    使用等于号(或不等号)不能判断 null 值
+#案例一：查询没有奖金的员工名 和 奖金率
+select 
+            last_name, commission_pct
+from 
+            employees
+where 
+            commission_pct is not null
+
+# 安全等于：&lt;=&gt; 
+/*
+
+*/
+select 
+            last_name, commission_pct
+from 
+            employees
+where 
+            commission_pct &lt;=&gt; null;
+
 
 select 
-CONCAT(employees.employee_id,&#39;,&#39;,employees.first_name,&#39;,&#39;,employees.last_name,&#39;,&#39;,
-employees.salary,&#39;,&#39;,employees.phone_number,&#39;,&#39;,employees.manager_id,&#39;,&#39;,
-employees.job_id,&#39;,&#39;,employees.hiredate,&#39;,&#39;,employees.email,&#39;,&#39;,IFNULL(employees.commission_pct,0)
-)
-as &quot;out_put&quot; 
-from employees;</code></pre><p><font color="red">补充isnull函数</font></p>
-<p>功能：判断某字段的值是否为null  如果为null 返回1 否则返回0.</p>
+            last_name, commission_pct
+from 
+            employees
+where 
+            commission_pct &lt;=&gt; 0.4;
+
+
+#is null 对比 &lt;=&gt;
+is null :仅可以判断null的值 可读性较好
+&lt;=&gt;: 既可以判断null值 又可以判断普通值 可读性较差
+
+
+;
+
+
+#案例：查询员工号为176的员工的部门号  姓名和 年薪
+select 
+            last_name as 姓名,
+            employees.department_id as 部门号,
+            salary*12*(1+IFNULL(commission_pct,0)) as 年薪
+from
+            employees
+where 
+            employee_id &lt;=&gt; 176
+</code></pre>
+<h3 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题"></a>经典面试题</h3><p>经典面试题：</p>
+<pre><code class="sql">select *  from employees 和 select * from employees where commission_pct like &#39;%%&#39; and last_name like &#39;%%&#39;</code></pre>
+<p>结果是否一致?</p>
+<p> 不一致：如果判断的字段值有null 则造成结果丢失 如果用or 有字段必不为空则可以</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -518,12 +643,12 @@ from employees;</code></pre><p><font color="red">补充isnull函数</font></p>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础_DQL_基础查询</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-条件查询</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-06-03, 20:05:35</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-22, 16:21:59</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/" title="MySQL基础_DQL_基础查询">http://yoursite.com/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/</a>
+    <p><span class="copy-title">发布时间:</span>2020-07-22, 16:39:36</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-22, 16:40:39</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2/" title="MySQL基础-DQL-条件查询">http://yoursite.com/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
