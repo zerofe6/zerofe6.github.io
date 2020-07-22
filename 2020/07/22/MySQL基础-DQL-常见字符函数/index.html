@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>bofan&#39;s blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="bofan&#39;s blog">
+  <title>MySQL基础-DQL-常见字符函数 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 数据库 , mysql ">
+  <meta name="description" content="MySQL基础-DQL-常见字符函数 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -50,7 +50,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar_zero.jpg" />
@@ -411,12 +411,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-MySQL基础-DQL-常见字符函数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网站来源"><span class="toc-text">网站来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解（来源主题作者对博客的理解）"><span class="toc-text">对博客的理解（来源主题作者对博客的理解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于昕雨"><span class="toc-text">关于昕雨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">MySQL基础-DQL-常见字符函数</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">数据库</a>
+            
+            <a class="color1">mysql</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-22 19:05:40'>2020-07-22 18:56</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见函数"><span class="toc-text">常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：字符函数："><span class="toc-text">一：字符函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-length-获取参数的字节数"><span class="toc-text">1.length 获取参数的字节数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-concat-拼接字符串"><span class="toc-text">2.concat 拼接字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-UPPER-、lower"><span class="toc-text">3.UPPER 、lower</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始"><span class="toc-text">4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-INSTR-返回字串第一次出现的索引-如果找不到-返回0"><span class="toc-text">5.INSTR 返回字串第一次出现的索引,如果找不到 返回0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-trim-出去多余的空格或前后字符"><span class="toc-text">6.trim 出去多余的空格或前后字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-lpad-用指定的字符实现左填充指定长度"><span class="toc-text">7.lpad  用指定的字符实现左填充指定长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-RPAD-用指定的字符实现右填充指定长度"><span class="toc-text">8.RPAD 用指定的字符实现右填充指定长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-REPLACE-用指定的字符串去替换指定的字符串"><span class="toc-text">9.REPLACE 用指定的字符串去替换指定的字符串</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -429,45 +474,75 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="网站来源"><a href="#网站来源" class="headerlink" title="网站来源"></a>网站来源</h2><blockquote>
-<p>框架：基于hexo和github pages提供的个人博客服务。</p>
-</blockquote>
-<blockquote>
-<p>主题：来自GitHub上杨玉杰的开源项目<a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a>，非常感谢原作者提供这么漂亮的主题！</p>
-</blockquote>
-<blockquote>
-<p>本网站于2020/1/10构建,很遗憾作为一名软件专业相关的学生,到大三才有自己的个人网站，且本网站是由开源工具和该开源项目构建的，构建过程无任何编码。</p>
-</blockquote>
-<h2 id="对博客的理解（来源主题作者对博客的理解）"><a href="#对博客的理解（来源主题作者对博客的理解）" class="headerlink" title="对博客的理解（来源主题作者对博客的理解）"></a>对博客的理解（来源主题作者对博客的理解）</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于昕雨"><a href="#关于昕雨" class="headerlink" title="关于昕雨"></a>关于昕雨</h2><p>**** 昕雨是范博的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h1><p>概念：类似于java中的方法，将实现某个功能的一组逻辑语句封装直接调用，隐藏了功能的实现细节，对外暴露方法名<br>好处：1.隐藏了实现细节、2.提高了代码的重用<br>调用：select 函数名（实参列表） 【from 表】<br>特点：<br>            1.函数名<br>            2.函数功能<br>分类：<br>            1.单行函数<br>                concat、length、ifnull<br>                        字符函数<br>                        数学函数<br>                        日期函数<br>                        其他函数<br>                        流程控制函数如（java中switch）<br>            2.分组函数<br>                功能:做统计使用，又称为统计函数、组合函数、聚合函数</p>
+<h2 id="一：字符函数："><a href="#一：字符函数：" class="headerlink" title="一：字符函数："></a>一：字符函数：</h2><h3 id="1-length-获取参数的字节数"><a href="#1-length-获取参数的字节数" class="headerlink" title="1.length 获取参数的字节数"></a>1.length 获取参数的字节数</h3><pre><code class="sql">select LENGTH(&quot;hello&quot;);
+select LENGTH(&quot;你好&quot;);
+show VARIABLES like &#39;%char%&#39;;</code></pre>
+<h3 id="2-concat-拼接字符串"><a href="#2-concat-拼接字符串" class="headerlink" title="2.concat 拼接字符串"></a>2.concat 拼接字符串</h3><pre><code class="sql">SELECT CONCAT(last_name,&#39; &#39;,first_name)
+from employees;</code></pre>
+<h3 id="3-UPPER-、lower"><a href="#3-UPPER-、lower" class="headerlink" title="3.UPPER 、lower"></a>3.UPPER 、lower</h3><h3 id><a href="#" class="headerlink" title></a></h3><pre><code class="sql">
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+select UPPER(&#39;hello&#39;);
+select lower(&#39;HELLO&#39;);
+#实例：将姓变大写 名变小写 然后拼接
+select 
+            CONCAT(UPPER(last_name),&#39; &#39;,LOWER(first_name)) as 姓名
+from 
+            employees</code></pre>
+<h3 id="4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始"><a href="#4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始" class="headerlink" title="4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始"></a>4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始</h3><p>截取从指定索引处后面所有字符</p>
+<pre><code class="sql">select SUBSTR(&#39;李莫愁&#39;,2) out_put; </code></pre>
+<p>截取从指定索引处后面指定长度字符</p>
+<pre><code class="sql">select SUBSTR(&#39;李莫愁&#39; , 1 ,2) out_put;</code></pre>
+<p>案例 将姓名中首字符大写其它字符小写</p>
+<pre><code class="sql">select 
+        CONCAT(UPPER(SUBSTRING(last_name,1,1)),LOWER(SUBSTR(last_name,2))) as out_put
+FROM
+        employees</code></pre>
+<h3 id="5-INSTR-返回字串第一次出现的索引-如果找不到-返回0"><a href="#5-INSTR-返回字串第一次出现的索引-如果找不到-返回0" class="headerlink" title="5.INSTR 返回字串第一次出现的索引,如果找不到 返回0"></a>5.INSTR 返回字串第一次出现的索引,如果找不到 返回0</h3><pre><code class="sql">select  INSTR(&#39;张三丰张无忌和张无忌&#39;,&#39;张无忌&#39;) as out_put;</code></pre>
+<h3 id="6-trim-出去多余的空格或前后字符"><a href="#6-trim-出去多余的空格或前后字符" class="headerlink" title="6.trim 出去多余的空格或前后字符"></a>6.trim 出去多余的空格或前后字符</h3><pre><code class="sql">SELECT TRIM(&#39;       张翠山     &#39;) as  out_put;
+SELECT length(TRIM(&#39;       张翠山     &#39;)) as  out_put;
+select TRIM(&#39;a&#39; from &#39;aaaaaaaaaaaaaaa张aaaa翠山aaaaa&#39;)as  out_put</code></pre>
+<h3 id="7-lpad-用指定的字符实现左填充指定长度"><a href="#7-lpad-用指定的字符实现左填充指定长度" class="headerlink" title="7.lpad  用指定的字符实现左填充指定长度"></a>7.lpad  用指定的字符实现左填充指定长度</h3><pre><code class="sql">select lpad(&#39;殷素素&#39;,10,&#39;*&#39;) as out_put;
+select lpad(&#39;殷素素&#39;,2,&#39;*&#39;) as out_put;</code></pre>
+<h3 id="8-RPAD-用指定的字符实现右填充指定长度"><a href="#8-RPAD-用指定的字符实现右填充指定长度" class="headerlink" title="8.RPAD 用指定的字符实现右填充指定长度"></a>8.RPAD 用指定的字符实现右填充指定长度</h3><pre><code class="sql">select RPAD(&#39;君不见高堂明镜悲白发&#39;,15,&#39;*&#39;) as out_put;
+select RPAD(&#39;君不见高堂明镜悲白发&#39;,8,&#39;*&#39;) as out_put;</code></pre>
+<h3 id="9-REPLACE-用指定的字符串去替换指定的字符串"><a href="#9-REPLACE-用指定的字符串去替换指定的字符串" class="headerlink" title="9.REPLACE 用指定的字符串去替换指定的字符串"></a>9.REPLACE 用指定的字符串去替换指定的字符串</h3><pre><code class="sql">select REPLACE(&#39;李白和汪伦是好友&#39;,&#39;汪伦&#39;,&#39;杜甫&#39;) as out_put;</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见字符函数</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-22, 18:56:49</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-22, 19:05:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见字符函数">http://yoursite.com/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2020- 范博</p>
