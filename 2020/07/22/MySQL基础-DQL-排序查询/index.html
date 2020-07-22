@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>前端基础 | bofan&#39;s blog</title>
-  <meta name="keywords" content=" 前端 ">
-  <meta name="description" content="前端基础 | bofan&#39;s blog">
+  <title>MySQL基础-DQL-排序查询 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 数据库 , mysql ">
+  <meta name="description" content="MySQL基础-DQL-排序查询 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -405,9 +405,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-前端基础" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-排序查询" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">前端基础</h1>
+        <h1 class="article-title">MySQL基础-DQL-排序查询</h1>
     
     <div class="article-meta">
         
@@ -415,21 +415,23 @@
         
         <span class="book">
             
-                <a  data-rel="前端">前端</a>
+                <a  data-rel="数据库">数据库</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color3">前端</a>
+            <a class="color4">数据库</a>
+            
+            <a class="color1">mysql</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-20 18:49:27'>2020-01-10 18:00</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-22 18:02:26'>2020-07-22 17:53</time>
         
     </div>
     <div class="article-meta">
@@ -451,7 +453,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-S和B-S"><span class="toc-text">C&#x2F;S和B&#x2F;S</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-S架构："><span class="toc-text">C&#x2F;S架构：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-S架构"><span class="toc-text">B&#x2F;S架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点：-1"><span class="toc-text">特点：</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL排序-DQL"><span class="toc-text">MySQL排序_DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例表"><span class="toc-text">示例表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排序查询"><span class="toc-text">排序查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#案例一：查询员工信息-工资从高到低实现排序"><span class="toc-text">案例一：查询员工信息 工资从高到低实现排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例二：查询部门编号大于等于90的员工信息，按入职时间先后进行排序"><span class="toc-text">案例二：查询部门编号大于等于90的员工信息，按入职时间先后进行排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例三：按表达式排序-按员工的年薪高低显示员工的年薪和信息"><span class="toc-text">案例三：按表达式排序 按员工的年薪高低显示员工的年薪和信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例四：按别名排序"><span class="toc-text">案例四：按别名排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例五：按姓名长度显示员工的姓名和工资【按函数排序】"><span class="toc-text">案例五：按姓名长度显示员工的姓名和工资【按函数排序】</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例六：查询员工信息，先按工资升序排序再按员工编号降序排序【按多个字段排序】也就说-按工资排序-工资一样的时候-在按员工编号降序排序"><span class="toc-text">案例六：查询员工信息，先按工资升序排序再按员工编号降序排序【按多个字段排序】也就说 按工资排序 工资一样的时候 在按员工编号降序排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例四：按别名排序-1"><span class="toc-text">案例四：按别名排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例四：按别名排序-2"><span class="toc-text">案例四：按别名排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例四：按别名排序-3"><span class="toc-text">案例四：按别名排序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业测试"><span class="toc-text">作业测试</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -467,35 +469,100 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="C-S和B-S"><a href="#C-S和B-S" class="headerlink" title="C/S和B/S"></a>C/S和B/S</h1><p>目前市面上的软件架构分为C/S架构和B/S架构</p>
-<h2 id="C-S架构："><a href="#C-S架构：" class="headerlink" title="C/S架构："></a>C/S架构：</h2><ol>
-<li>一般使用的软件都是C/S架构</li>
-<li>比如系统软件中的360、QQ、ofice、等</li>
-<li>C表示客户端，用户通过客户端来使用软件</li>
-<li>S表示服务器，服务器负责处理软件的业务逻辑<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3></li>
-<li>软件使用前必须得安装</li>
-<li>软件更新时，服务器和客户端得同时更新</li>
-<li>C/S架构不能跨平台使用 各自平台对应各自版本</li>
-<li>C/S架构的软件客户端和服务通信采用的是自有的协议，相对来说比较安全</li>
-</ol>
-<h2 id="B-S架构"><a href="#B-S架构" class="headerlink" title="B/S架构"></a>B/S架构</h2><ol>
-<li>B/S本质上也是C/S，只不过B/S架构的软件，通过使用浏览器作为软件的客户端</li>
-<li>B/S架构的软件通过使用浏览器访问网页的形式，来使用软件</li>
-<li>比如：京东，淘宝，知乎等<h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3></li>
-<li>软件不需要安装，直接使用浏览器访问指定的网页即可</li>
-<li>软件更新时，客户端不需要更新</li>
-<li>软件可以跨平台，只要系统中有浏览器，就可以使用</li>
-<li>B/S架构的软件，客户端和服务器之间通信采用的是通用的HTTP协议，相对来说不安全。HTTPS协议相对来说比HTTP更加安全 </li>
-</ol>
-<blockquote>
-<p><font color="red">结构-HTML用于描述页面的结构</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">表现-CSS用于控制页面元素的样式</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">行为-JavaScript用于响应用户操作</font></p>
-</blockquote>
+        <h1 id="MySQL排序-DQL"><a href="#MySQL排序-DQL" class="headerlink" title="MySQL排序_DQL"></a>MySQL排序_DQL</h1><h2 id="示例表"><a href="#示例表" class="headerlink" title="示例表"></a>示例表</h2><pre><code>员工表：员工编号、名、姓 、邮箱、电话号码、工种编号、薪水、奖金率、上级领导员工编号、部门编号、入职日期</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf898e2cs3j30wd0bvmxp.jpg" alt="员工表"></p>
+<pre><code>部门表：部门编号、部门名称、部门领导的员工编号、位置编号</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf89vzdlf2j30vu066mxe.jpg" alt></p>
+<pre><code>位置表：位置编号、街道、邮编、城市、省份、国家编号</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf89zn1g4jj30vz07u74i.jpg" alt></p>
+<pre><code>工种表：工种编号、工种名称、最低工资、最高工资</code></pre><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gf8a16ow3hj30qd06q0ss.jpg" alt></p>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><p>1、引入<br>            select * from employees;<br>2、语法<br>            select 查询列表<br>            from 表<br>            where 筛选条件<br>            order by 排序列表【asc | desc】</p>
+<p>3、特点：<br>            <font color="red">1.asc代表升序 desc 代表降序  不写默认升序</font><br>            <font color="red">2.order by 字句中可以支持单个字段、多个字段、表达式、函数、别名</font><br>            <font color="red">3.order by 字句一般放在查询语句的最后面，但limit子句除外</font></p>
+<h5 id="案例一：查询员工信息-工资从高到低实现排序"><a href="#案例一：查询员工信息-工资从高到低实现排序" class="headerlink" title="案例一：查询员工信息 工资从高到低实现排序"></a>案例一：查询员工信息 工资从高到低实现排序</h5><pre><code class="sql">select 
+            *
+from 
+            employees
+            ORDER BY salary desc;
+select 
+            *
+from 
+            employees
+            ORDER BY salary asc;</code></pre>
+<h5 id="案例二：查询部门编号大于等于90的员工信息，按入职时间先后进行排序"><a href="#案例二：查询部门编号大于等于90的员工信息，按入职时间先后进行排序" class="headerlink" title="案例二：查询部门编号大于等于90的员工信息，按入职时间先后进行排序"></a>案例二：查询部门编号大于等于90的员工信息，按入职时间先后进行排序</h5><pre><code class="sql">select 
+            *
+FROM
+            employees
+where 
+            department_id&gt;=90  ORDER BY hiredate asc;</code></pre>
+<h5 id="案例三：按表达式排序-按员工的年薪高低显示员工的年薪和信息"><a href="#案例三：按表达式排序-按员工的年薪高低显示员工的年薪和信息" class="headerlink" title="案例三：按表达式排序 按员工的年薪高低显示员工的年薪和信息"></a>案例三：按表达式排序 按员工的年薪高低显示员工的年薪和信息</h5><pre><code class="sql">SELECT
+            *,
+            salary * 12 *(1+IFNULL(commission_pct,0)) as 年薪
+FROM
+            employees
+            ORDER BY salary * 12 *(1+IFNULL(commission_pct,0)) desc;</code></pre>
+<h5 id="案例四：按别名排序"><a href="#案例四：按别名排序" class="headerlink" title="案例四：按别名排序"></a>案例四：按别名排序</h5><pre><code class="sql">SELECT
+            *,
+            salary * 12 *(1+IFNULL(commission_pct,0)) as 年薪
+FROM
+            employees
+            ORDER BY 年薪 desc;</code></pre>
+<h5 id="案例五：按姓名长度显示员工的姓名和工资【按函数排序】"><a href="#案例五：按姓名长度显示员工的姓名和工资【按函数排序】" class="headerlink" title="案例五：按姓名长度显示员工的姓名和工资【按函数排序】"></a>案例五：按姓名长度显示员工的姓名和工资【按函数排序】</h5><pre><code class="sql">SELECT
+            LENGTH(last_name) as 姓名长度,
+            last_name as 姓名,
+            salary as 工资
+from 
+            employees
+            ORDER BY 姓名长度 asc;</code></pre>
+<h5 id="案例六：查询员工信息，先按工资升序排序再按员工编号降序排序【按多个字段排序】也就说-按工资排序-工资一样的时候-在按员工编号降序排序"><a href="#案例六：查询员工信息，先按工资升序排序再按员工编号降序排序【按多个字段排序】也就说-按工资排序-工资一样的时候-在按员工编号降序排序" class="headerlink" title="案例六：查询员工信息，先按工资升序排序再按员工编号降序排序【按多个字段排序】也就说 按工资排序 工资一样的时候 在按员工编号降序排序"></a>案例六：查询员工信息，先按工资升序排序再按员工编号降序排序【按多个字段排序】也就说 按工资排序 工资一样的时候 在按员工编号降序排序</h5><pre><code class="sql">select 
+            salary as 员工工资,
+            employee_id as 员工编号
+FROM
+        employees
+        ORDER BY salary asc, employee_id desc;</code></pre>
+<h5 id="案例四：按别名排序-1"><a href="#案例四：按别名排序-1" class="headerlink" title="案例四：按别名排序"></a>案例四：按别名排序</h5><pre><code class="sql">SELECT
+            *,
+            salary * 12 *(1+IFNULL(commission_pct,0)) as 年薪
+FROM
+            employees
+            ORDER BY 年薪 desc;</code></pre>
+<h5 id="案例四：按别名排序-2"><a href="#案例四：按别名排序-2" class="headerlink" title="案例四：按别名排序"></a>案例四：按别名排序</h5><pre><code class="sql">SELECT
+            *,
+            salary * 12 *(1+IFNULL(commission_pct,0)) as 年薪
+FROM
+            employees
+            ORDER BY 年薪 desc;</code></pre>
+<h5 id="案例四：按别名排序-3"><a href="#案例四：按别名排序-3" class="headerlink" title="案例四：按别名排序"></a>案例四：按别名排序</h5><pre><code class="sql">SELECT
+            *,
+            salary * 12 *(1+IFNULL(commission_pct,0)) as 年薪
+FROM
+            employees
+            ORDER BY 年薪 desc;</code></pre>
+<h4 id="作业测试"><a href="#作业测试" class="headerlink" title="作业测试"></a>作业测试</h4><pre><code class="sql">#测试一：查询员工的姓名、部门号 和年薪 按年薪降序、姓名升序
+SELECT
+            last_name as 姓名,
+            department_id as 部门号,
+            salary*12*(1+IFNULL(commission_pct,0)) 年薪
+from 
+            employees
+            ORDER BY 年薪 desc , 姓名 asc;
+
+#测试二：选择工资不在8000到17000的员工工资和姓名，按工资降序
+SELECT 
+            salary as 工资,
+            last_name as 姓名
+FROM 
+            employees
+WHERE
+            salary not  BETWEEN 8000 and 17000 ORDER BY salary desc;
+
+
+#测试三：查询邮箱中包含e的员工信息，并先按邮箱的字节数降序，再按部门号升序
+SELECT
+            *,
+            LENGTH(employees.email) as  邮箱字节数
+FROM 
+            employees
+WHERE
+            email like &#39;%e%&#39;
+            ORDER BY 邮箱字节数 desc ,department_id asc;
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -509,12 +576,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>前端基础</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-排序查询</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-10, 18:00:00</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-20, 18:49:27</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/10/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="前端基础">http://yoursite.com/2020/01/10/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</a>
+    <p><span class="copy-title">发布时间:</span>2020-07-22, 17:53:55</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-22, 18:02:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2/" title="MySQL基础-DQL-排序查询">http://yoursite.com/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
