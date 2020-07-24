@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础-DQL-常见字符函数 | bofan&#39;s blog</title>
+  <title>MySQL基础-DQL-常见日期函数 | bofan&#39;s blog</title>
   <meta name="keywords" content=" 数据库 , mysql ">
-  <meta name="description" content="MySQL基础-DQL-常见字符函数 | bofan&#39;s blog">
+  <meta name="description" content="MySQL基础-DQL-常见日期函数 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -437,9 +437,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-DQL-常见字符函数" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-常见日期函数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础-DQL-常见字符函数</h1>
+        <h1 class="article-title">MySQL基础-DQL-常见日期函数</h1>
     
     <div class="article-meta">
         
@@ -463,7 +463,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-22 19:05:40'>2020-07-22 18:56</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-24 16:09:25'>2020-07-24 15:40</time>
         
     </div>
     <div class="article-meta">
@@ -485,7 +485,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见函数"><span class="toc-text">常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：字符函数："><span class="toc-text">一：字符函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-length-获取参数的字节数"><span class="toc-text">1.length 获取参数的字节数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-concat-拼接字符串"><span class="toc-text">2.concat 拼接字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-UPPER-、lower"><span class="toc-text">3.UPPER 、lower</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始"><span class="toc-text">4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-INSTR-返回字串第一次出现的索引-如果找不到-返回0"><span class="toc-text">5.INSTR 返回字串第一次出现的索引,如果找不到 返回0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-trim-出去多余的空格或前后字符"><span class="toc-text">6.trim 出去多余的空格或前后字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-lpad-用指定的字符实现左填充指定长度"><span class="toc-text">7.lpad  用指定的字符实现左填充指定长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-RPAD-用指定的字符实现右填充指定长度"><span class="toc-text">8.RPAD 用指定的字符实现右填充指定长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-REPLACE-用指定的字符串去替换指定的字符串"><span class="toc-text">9.REPLACE 用指定的字符串去替换指定的字符串</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#三：日期函数"><span class="toc-text">三：日期函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-now-返回当前系统日期-时间"><span class="toc-text">1.now 返回当前系统日期+时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-curdate-返回当前系统日期"><span class="toc-text">2.curdate 返回当前系统日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-curtime-返回当前系统时间"><span class="toc-text">3.curtime 返回当前系统时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-可以获取指定的部分-年、月、日-、小时、分钟、秒"><span class="toc-text">4.可以获取指定的部分 年、月、日 、小时、分钟、秒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-str-to-date-将日期字符串转为指定的格式的日期"><span class="toc-text">5.str_to_date 将日期字符串转为指定的格式的日期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询入职日期为1992-4-3的员工"><span class="toc-text">查询入职日期为1992-4-3的员工</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-date-fromat-将日期转换为指定格式字符串"><span class="toc-text">6.date_fromat 将日期转换为指定格式字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询有奖金的员工名和入职日期-月-日-年"><span class="toc-text">查询有奖金的员工名和入职日期(月&#x2F;日 年)</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -501,39 +501,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h1><p>概念：类似于java中的方法，将实现某个功能的一组逻辑语句封装直接调用，隐藏了功能的实现细节，对外暴露方法名<br>好处：1.隐藏了实现细节、2.提高了代码的重用<br>调用：select 函数名（实参列表） 【from 表】<br>特点：<br>            1.函数名<br>            2.函数功能<br>分类：<br>            1.单行函数<br>                concat、length、ifnull<br>                        字符函数<br>                        数学函数<br>                        日期函数<br>                        其他函数<br>                        流程控制函数如（java中switch）<br>            2.分组函数<br>                功能:做统计使用，又称为统计函数、组合函数、聚合函数</p>
-<h2 id="一：字符函数："><a href="#一：字符函数：" class="headerlink" title="一：字符函数："></a>一：字符函数：</h2><h3 id="1-length-获取参数的字节数"><a href="#1-length-获取参数的字节数" class="headerlink" title="1.length 获取参数的字节数"></a>1.length 获取参数的字节数</h3><pre><code class="sql">select LENGTH(&quot;hello&quot;);
-select LENGTH(&quot;你好&quot;);
-show VARIABLES like &#39;%char%&#39;;</code></pre>
-<h3 id="2-concat-拼接字符串"><a href="#2-concat-拼接字符串" class="headerlink" title="2.concat 拼接字符串"></a>2.concat 拼接字符串</h3><pre><code class="sql">SELECT CONCAT(last_name,&#39; &#39;,first_name)
-from employees;</code></pre>
-<h3 id="3-UPPER-、lower"><a href="#3-UPPER-、lower" class="headerlink" title="3.UPPER 、lower"></a>3.UPPER 、lower</h3><h3 id><a href="#" class="headerlink" title></a></h3><pre><code class="sql">
-
-select UPPER(&#39;hello&#39;);
-select lower(&#39;HELLO&#39;);
-#实例：将姓变大写 名变小写 然后拼接
+        <h1 id="三：日期函数"><a href="#三：日期函数" class="headerlink" title="三：日期函数"></a>三：日期函数</h1><p><img src="http://ww1.sinaimg.cn/large/005ujAMXgy1gh24lf5d6bj30vc0mfn42.jpg" alt="日期格式"></p>
+<h2 id="1-now-返回当前系统日期-时间"><a href="#1-now-返回当前系统日期-时间" class="headerlink" title="1.now 返回当前系统日期+时间"></a>1.now 返回当前系统日期+时间</h2><pre><code class="sql">select NOW();</code></pre>
+<h2 id="2-curdate-返回当前系统日期"><a href="#2-curdate-返回当前系统日期" class="headerlink" title="2.curdate 返回当前系统日期"></a>2.curdate 返回当前系统日期</h2><pre><code class="sql">select CURDATE</code></pre>
+<h2 id="3-curtime-返回当前系统时间"><a href="#3-curtime-返回当前系统时间" class="headerlink" title="3.curtime 返回当前系统时间"></a>3.curtime 返回当前系统时间</h2><pre><code class="sql">select CURTIME();</code></pre>
+<h2 id="4-可以获取指定的部分-年、月、日-、小时、分钟、秒"><a href="#4-可以获取指定的部分-年、月、日-、小时、分钟、秒" class="headerlink" title="4.可以获取指定的部分 年、月、日 、小时、分钟、秒"></a>4.可以获取指定的部分 年、月、日 、小时、分钟、秒</h2><pre><code class="sql">select year(NOW());
+select year(&#39;2020-3-24&#39;);
 select 
-            CONCAT(UPPER(last_name),&#39; &#39;,LOWER(first_name)) as 姓名
+            year(hiredate)
 from 
-            employees</code></pre>
-<h3 id="4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始"><a href="#4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始" class="headerlink" title="4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始"></a>4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始</h3><p>截取从指定索引处后面所有字符</p>
-<pre><code class="sql">select SUBSTR(&#39;李莫愁&#39;,2) out_put; </code></pre>
-<p>截取从指定索引处后面指定长度字符</p>
-<pre><code class="sql">select SUBSTR(&#39;李莫愁&#39; , 1 ,2) out_put;</code></pre>
-<p>案例 将姓名中首字符大写其它字符小写</p>
-<pre><code class="sql">select 
-        CONCAT(UPPER(SUBSTRING(last_name,1,1)),LOWER(SUBSTR(last_name,2))) as out_put
+            employees;
+
+select month(NOW());
+
+select monthname(NOW());</code></pre>
+<h2 id="5-str-to-date-将日期字符串转为指定的格式的日期"><a href="#5-str-to-date-将日期字符串转为指定的格式的日期" class="headerlink" title="5.str_to_date 将日期字符串转为指定的格式的日期"></a>5.str_to_date 将日期字符串转为指定的格式的日期</h2><pre><code class="sql">select str_to_date(hiredate,&#39;%Y-%c-%d&#39;) as out_put
+from employees; </code></pre>
+<h3 id="查询入职日期为1992-4-3的员工"><a href="#查询入职日期为1992-4-3的员工" class="headerlink" title="查询入职日期为1992-4-3的员工"></a>查询入职日期为1992-4-3的员工</h3><pre><code class="sql">select 
+            *
+
 FROM
-        employees</code></pre>
-<h3 id="5-INSTR-返回字串第一次出现的索引-如果找不到-返回0"><a href="#5-INSTR-返回字串第一次出现的索引-如果找不到-返回0" class="headerlink" title="5.INSTR 返回字串第一次出现的索引,如果找不到 返回0"></a>5.INSTR 返回字串第一次出现的索引,如果找不到 返回0</h3><pre><code class="sql">select  INSTR(&#39;张三丰张无忌和张无忌&#39;,&#39;张无忌&#39;) as out_put;</code></pre>
-<h3 id="6-trim-出去多余的空格或前后字符"><a href="#6-trim-出去多余的空格或前后字符" class="headerlink" title="6.trim 出去多余的空格或前后字符"></a>6.trim 出去多余的空格或前后字符</h3><pre><code class="sql">SELECT TRIM(&#39;       张翠山     &#39;) as  out_put;
-SELECT length(TRIM(&#39;       张翠山     &#39;)) as  out_put;
-select TRIM(&#39;a&#39; from &#39;aaaaaaaaaaaaaaa张aaaa翠山aaaaa&#39;)as  out_put</code></pre>
-<h3 id="7-lpad-用指定的字符实现左填充指定长度"><a href="#7-lpad-用指定的字符实现左填充指定长度" class="headerlink" title="7.lpad  用指定的字符实现左填充指定长度"></a>7.lpad  用指定的字符实现左填充指定长度</h3><pre><code class="sql">select lpad(&#39;殷素素&#39;,10,&#39;*&#39;) as out_put;
-select lpad(&#39;殷素素&#39;,2,&#39;*&#39;) as out_put;</code></pre>
-<h3 id="8-RPAD-用指定的字符实现右填充指定长度"><a href="#8-RPAD-用指定的字符实现右填充指定长度" class="headerlink" title="8.RPAD 用指定的字符实现右填充指定长度"></a>8.RPAD 用指定的字符实现右填充指定长度</h3><pre><code class="sql">select RPAD(&#39;君不见高堂明镜悲白发&#39;,15,&#39;*&#39;) as out_put;
-select RPAD(&#39;君不见高堂明镜悲白发&#39;,8,&#39;*&#39;) as out_put;</code></pre>
-<h3 id="9-REPLACE-用指定的字符串去替换指定的字符串"><a href="#9-REPLACE-用指定的字符串去替换指定的字符串" class="headerlink" title="9.REPLACE 用指定的字符串去替换指定的字符串"></a>9.REPLACE 用指定的字符串去替换指定的字符串</h3><pre><code class="sql">select REPLACE(&#39;李白和汪伦是好友&#39;,&#39;汪伦&#39;,&#39;杜甫&#39;) as out_put;</code></pre>
+            employees
+WHERE    
+            hiredate &lt;=&gt; &#39;1992-4-3&#39;;
+
+select 
+            *
+
+FROM
+            employees
+WHERE    
+            hiredate &lt;=&gt; str_to_date(&#39;4-3 1992&#39;,&#39;%c-%d %Y&#39;);</code></pre>
+<h2 id="6-date-fromat-将日期转换为指定格式字符串"><a href="#6-date-fromat-将日期转换为指定格式字符串" class="headerlink" title="6.date_fromat 将日期转换为指定格式字符串"></a>6.date_fromat 将日期转换为指定格式字符串</h2><pre><code class="sql">select date_format(NOW(),&#39;%Y年%c月%d日&#39;);</code></pre>
+<h3 id="查询有奖金的员工名和入职日期-月-日-年"><a href="#查询有奖金的员工名和入职日期-月-日-年" class="headerlink" title="查询有奖金的员工名和入职日期(月/日 年)"></a>查询有奖金的员工名和入职日期(月/日 年)</h3><pre><code class="sql">select  
+            last_name as 姓名,
+            date_format(hiredate,&#39;%c月/%d日 %y年&#39;) as 入职日期
+from 
+            employees;</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -547,12 +551,12 @@ select RPAD(&#39;君不见高堂明镜悲白发&#39;,8,&#39;*&#39;) as out_put;<
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见字符函数</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见日期函数</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-07-22, 18:56:49</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-22, 19:05:40</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见字符函数">http://yoursite.com/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2020-07-24, 15:40:26</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-24, 16:09:25</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见日期函数">http://yoursite.com/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

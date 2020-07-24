@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础-DQL-常见字符函数 | bofan&#39;s blog</title>
+  <title>MySQL基础-DQL-常见其它函数 | bofan&#39;s blog</title>
   <meta name="keywords" content=" 数据库 , mysql ">
-  <meta name="description" content="MySQL基础-DQL-常见字符函数 | bofan&#39;s blog">
+  <meta name="description" content="MySQL基础-DQL-常见其它函数 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -437,9 +437,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-DQL-常见字符函数" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-常见其它函数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础-DQL-常见字符函数</h1>
+        <h1 class="article-title">MySQL基础-DQL-常见其它函数</h1>
     
     <div class="article-meta">
         
@@ -463,7 +463,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-22 19:05:40'>2020-07-22 18:56</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-24 16:04:31'>2020-07-24 15:40</time>
         
     </div>
     <div class="article-meta">
@@ -485,7 +485,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见函数"><span class="toc-text">常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：字符函数："><span class="toc-text">一：字符函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-length-获取参数的字节数"><span class="toc-text">1.length 获取参数的字节数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-concat-拼接字符串"><span class="toc-text">2.concat 拼接字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-UPPER-、lower"><span class="toc-text">3.UPPER 、lower</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始"><span class="toc-text">4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-INSTR-返回字串第一次出现的索引-如果找不到-返回0"><span class="toc-text">5.INSTR 返回字串第一次出现的索引,如果找不到 返回0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-trim-出去多余的空格或前后字符"><span class="toc-text">6.trim 出去多余的空格或前后字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-lpad-用指定的字符实现左填充指定长度"><span class="toc-text">7.lpad  用指定的字符实现左填充指定长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-RPAD-用指定的字符实现右填充指定长度"><span class="toc-text">8.RPAD 用指定的字符实现右填充指定长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-REPLACE-用指定的字符串去替换指定的字符串"><span class="toc-text">9.REPLACE 用指定的字符串去替换指定的字符串</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#四：其它函数"><span class="toc-text">四：其它函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VERSION-查看版本号"><span class="toc-text">VERSION()查看版本号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DATABASE-查看数据库"><span class="toc-text">DATABASE()查看数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USER-查看当前用户"><span class="toc-text">USER&#96;() 查看当前用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五：流程控制函数"><span class="toc-text">五：流程控制函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-if-函数：-if-else-的效果"><span class="toc-text">1.if 函数： if else 的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询员工是否有奖金"><span class="toc-text">查询员工是否有奖金</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-case-函数的使用一：switch-case-效果"><span class="toc-text">2.case 函数的使用一：switch case 效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-case-函数的使用二：类似于多重if"><span class="toc-text">3.case 函数的使用二：类似于多重if</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作业"><span class="toc-text">作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作业一："><span class="toc-text">作业一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业二：-查询员工号-、姓名、工资-，以及工资提高20-后的结果"><span class="toc-text">作业二： 查询员工号 、姓名、工资 ，以及工资提高20%后的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业三：将员工姓名按首字母排序-与姓名排序是不一样的-并写出姓名的长度"><span class="toc-text">作业三：将员工姓名按首字母排序(与姓名排序是不一样的) 并写出姓名的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业四：做一个查询产生下面的结果"><span class="toc-text">作业四：做一个查询产生下面的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业五：按照下面的条件使用case-WHEN"><span class="toc-text">作业五：按照下面的条件使用case WHEN</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -501,39 +501,113 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h1><p>概念：类似于java中的方法，将实现某个功能的一组逻辑语句封装直接调用，隐藏了功能的实现细节，对外暴露方法名<br>好处：1.隐藏了实现细节、2.提高了代码的重用<br>调用：select 函数名（实参列表） 【from 表】<br>特点：<br>            1.函数名<br>            2.函数功能<br>分类：<br>            1.单行函数<br>                concat、length、ifnull<br>                        字符函数<br>                        数学函数<br>                        日期函数<br>                        其他函数<br>                        流程控制函数如（java中switch）<br>            2.分组函数<br>                功能:做统计使用，又称为统计函数、组合函数、聚合函数</p>
-<h2 id="一：字符函数："><a href="#一：字符函数：" class="headerlink" title="一：字符函数："></a>一：字符函数：</h2><h3 id="1-length-获取参数的字节数"><a href="#1-length-获取参数的字节数" class="headerlink" title="1.length 获取参数的字节数"></a>1.length 获取参数的字节数</h3><pre><code class="sql">select LENGTH(&quot;hello&quot;);
-select LENGTH(&quot;你好&quot;);
-show VARIABLES like &#39;%char%&#39;;</code></pre>
-<h3 id="2-concat-拼接字符串"><a href="#2-concat-拼接字符串" class="headerlink" title="2.concat 拼接字符串"></a>2.concat 拼接字符串</h3><pre><code class="sql">SELECT CONCAT(last_name,&#39; &#39;,first_name)
-from employees;</code></pre>
-<h3 id="3-UPPER-、lower"><a href="#3-UPPER-、lower" class="headerlink" title="3.UPPER 、lower"></a>3.UPPER 、lower</h3><h3 id><a href="#" class="headerlink" title></a></h3><pre><code class="sql">
+        <h2 id="四：其它函数"><a href="#四：其它函数" class="headerlink" title="四：其它函数"></a>四：其它函数</h2><h3 id="VERSION-查看版本号"><a href="#VERSION-查看版本号" class="headerlink" title="VERSION()查看版本号"></a>VERSION()查看版本号</h3><pre><code class="sql">select version() as out_put;</code></pre>
+<h3 id="DATABASE-查看数据库"><a href="#DATABASE-查看数据库" class="headerlink" title="DATABASE()查看数据库"></a><code>DATABASE</code>()查看数据库</h3><pre><code class="sql">select DATABASE() as out_put;</code></pre>
+<h3 id="USER-查看当前用户"><a href="#USER-查看当前用户" class="headerlink" title="USER`() 查看当前用户"></a>USER`() 查看当前用户</h3><pre><code class="sql">select USER()</code></pre>
+<h2 id="五：流程控制函数"><a href="#五：流程控制函数" class="headerlink" title="五：流程控制函数"></a>五：流程控制函数</h2><h3 id="1-if-函数：-if-else-的效果"><a href="#1-if-函数：-if-else-的效果" class="headerlink" title="1.if 函数： if else 的效果"></a>1.if 函数： if else 的效果</h3><pre><code class="sql">select if(10&gt;5,&#39;大&#39;,&#39;小&#39;); </code></pre>
+<h3 id="查询员工是否有奖金"><a href="#查询员工是否有奖金" class="headerlink" title="查询员工是否有奖金"></a>查询员工是否有奖金</h3><pre><code class="sql">select 
+            last_name as  姓名,
+            if(commission_pct is null,&#39;有奖金&#39;,&#39;没有奖金&#39;) as  奖金情况
+from 
+            employees;</code></pre>
+<h3 id="2-case-函数的使用一：switch-case-效果"><a href="#2-case-函数的使用一：switch-case-效果" class="headerlink" title="2.case 函数的使用一：switch case 效果"></a>2.case 函数的使用一：switch case 效果</h3><p>java 中<br>switch(变量或表达式)<br>        case 常量1:表达式 break;<br>        case 常量2:表达式 break;<br>        case 常量3:表达式 break;<br>        …<br>        default ：语句n break;</p>
+<p>mysql中<br>case 要判断的字段或者表达式<br>when 常量1 then 值1或语句1;<br>when 常量2 then 值2或语句2;<br>when 常量3 then 值3或语句3;<br>…<br>else 要显示的值n或者语句n;<br>end</p>
+<p>查询员工的工资<br>部门号=30 ，显示的工资为1.1倍<br>部门号=40 ，显示的工资为1.2倍<br>部门号=50 ，显示的工资为1.3倍<br>其他部门为原工资</p>
+<pre><code class="sql">SELECT    
+            department_id,
+            salary as 原始工资,
+            case department_id
+            when 30 then salary*1.1
+            when 40 then salary*1.2
+            when 50 then salary*1.3
+            else  salary
+            end as 新工资
+from 
+            employees;</code></pre>
+<h3 id="3-case-函数的使用二：类似于多重if"><a href="#3-case-函数的使用二：类似于多重if" class="headerlink" title="3.case 函数的使用二：类似于多重if"></a>3.case 函数的使用二：类似于多重if</h3><p>java 中<br>if(条件1){<br>    语句1;<br>}else if(条件2){<br>    语句2;<br>}else if(条件3){<br>    语句3;<br>}…<br>else{<br>    语句n;<br>}</p>
+<p>mysql中<br>case<br>when 条件1  then 要显示的值1 或语句1<br>when 条件2  then 要显示的值2 或语句2<br>…<br>else 要显示的值n 或语句n<br>end </p>
+<p>案例： 查询员工的工资情况<br>如果工资&gt;20000 显示A级别<br>如果工资&gt;15000 显示B级别<br>如果工资&gt;10000 显示C级别<br>否则 显示D级别</p>
+<pre><code class="sql">select 
+            salary as 工资,
+            CASE    
+            when salary&gt;20000 then &#39;A&#39;
+            when salary&gt;15000 then &#39;B&#39;
+            when salary&gt;10000 then &#39;C&#39;
+            else  &#39;D&#39;
+            end
+            as 工资级别
+from  
+            employees;</code></pre>
+<pre><code>字符函数：
+        LENGTH
+        CONCAT
+        substr
+        instr
+        trim
+        upper 
+        lower 
+        lpad 
+        rpad 
+        replace 
+数学函数
+        round 
+        ceil 
+        floor 
+        truncate  
+        MOD
 
-select UPPER(&#39;hello&#39;);
-select lower(&#39;HELLO&#39;);
-#实例：将姓变大写 名变小写 然后拼接
-select 
-            CONCAT(UPPER(last_name),&#39; &#39;,LOWER(first_name)) as 姓名
+日期函数
+        now 
+          curdate 
+        curtime 
+          year 
+        month 
+        monthname 
+        day 
+        hour 
+        minute 
+        second 
+        str_to_date 
+        date_format 
+
+其他函数
+        VERSION()
+        DATABASE
+        user 
+        IF
+        case </code></pre><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><h3 id="作业一："><a href="#作业一：" class="headerlink" title="作业一："></a>作业一：</h3><pre><code class="sql">select NOW(); </code></pre>
+<h3 id="作业二：-查询员工号-、姓名、工资-，以及工资提高20-后的结果"><a href="#作业二：-查询员工号-、姓名、工资-，以及工资提高20-后的结果" class="headerlink" title="作业二： 查询员工号 、姓名、工资 ，以及工资提高20%后的结果"></a>作业二： 查询员工号 、姓名、工资 ，以及工资提高20%后的结果</h3><pre><code class="sql">select 
+            employee_id as 员工号,
+            CONCAT(last_name,&#39; &#39;,first_name) as 姓名,
+            salary as 工资,
+            salary * 1.2 as  新工资
+from 
+        employees;</code></pre>
+<h3 id="作业三：将员工姓名按首字母排序-与姓名排序是不一样的-并写出姓名的长度"><a href="#作业三：将员工姓名按首字母排序-与姓名排序是不一样的-并写出姓名的长度" class="headerlink" title="作业三：将员工姓名按首字母排序(与姓名排序是不一样的) 并写出姓名的长度"></a>作业三：将员工姓名按首字母排序(与姓名排序是不一样的) 并写出姓名的长度</h3><pre><code class="sql">select 
+            LENGTH(last_name) as  姓名长度,
+            last_name as 姓名
+FROM
+            employees
+ORDER BY SUBSTR(last_name,1,1) asc;</code></pre>
+<h3 id="作业四：做一个查询产生下面的结果"><a href="#作业四：做一个查询产生下面的结果" class="headerlink" title="作业四：做一个查询产生下面的结果"></a>作业四：做一个查询产生下面的结果</h3><p><last_name> earns <salary> monthly  but wants &lt;salary*3&gt;<br>Dream salary<br>King earns 24000 monthly but wants 72000</salary></last_name></p>
+<pre><code class="sql">select 
+            CONCAT(last_name,&#39; earns &#39;,salary,&#39; monthly  but wants &#39;,salary*3) 
+            as  &#39;Dream salary&#39;
+from 
+            employees
+where  
+            salary &lt;=&gt; 24000;</code></pre>
+<h3 id="作业五：按照下面的条件使用case-WHEN"><a href="#作业五：按照下面的条件使用case-WHEN" class="headerlink" title="作业五：按照下面的条件使用case WHEN"></a>作业五：按照下面的条件使用case WHEN</h3><p>​    job  grade<br>​    AD_PRES  A<br>​    ST_MAN B<br>​    IT_PROG C</p>
+<pre><code class="sql">select 
+            job_id as job,
+            case 
+            when job_id=&#39;AD_PRES&#39; then &#39;A&#39;
+            when job_id=&#39;ST_MAN&#39; then &#39;B&#39;
+            when job_id=&#39;IT_PROG&#39; then &#39;C&#39;
+            else &#39;级别未知&#39;
+            end as grade
 from 
             employees</code></pre>
-<h3 id="4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始"><a href="#4-SUBSTR-SUBSTRING-str-FROM-pos-FOR-len-截取字符串-索引从1开始" class="headerlink" title="4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始"></a>4.SUBSTR  SUBSTRING(str FROM pos FOR len) 截取字符串 索引从1开始</h3><p>截取从指定索引处后面所有字符</p>
-<pre><code class="sql">select SUBSTR(&#39;李莫愁&#39;,2) out_put; </code></pre>
-<p>截取从指定索引处后面指定长度字符</p>
-<pre><code class="sql">select SUBSTR(&#39;李莫愁&#39; , 1 ,2) out_put;</code></pre>
-<p>案例 将姓名中首字符大写其它字符小写</p>
-<pre><code class="sql">select 
-        CONCAT(UPPER(SUBSTRING(last_name,1,1)),LOWER(SUBSTR(last_name,2))) as out_put
-FROM
-        employees</code></pre>
-<h3 id="5-INSTR-返回字串第一次出现的索引-如果找不到-返回0"><a href="#5-INSTR-返回字串第一次出现的索引-如果找不到-返回0" class="headerlink" title="5.INSTR 返回字串第一次出现的索引,如果找不到 返回0"></a>5.INSTR 返回字串第一次出现的索引,如果找不到 返回0</h3><pre><code class="sql">select  INSTR(&#39;张三丰张无忌和张无忌&#39;,&#39;张无忌&#39;) as out_put;</code></pre>
-<h3 id="6-trim-出去多余的空格或前后字符"><a href="#6-trim-出去多余的空格或前后字符" class="headerlink" title="6.trim 出去多余的空格或前后字符"></a>6.trim 出去多余的空格或前后字符</h3><pre><code class="sql">SELECT TRIM(&#39;       张翠山     &#39;) as  out_put;
-SELECT length(TRIM(&#39;       张翠山     &#39;)) as  out_put;
-select TRIM(&#39;a&#39; from &#39;aaaaaaaaaaaaaaa张aaaa翠山aaaaa&#39;)as  out_put</code></pre>
-<h3 id="7-lpad-用指定的字符实现左填充指定长度"><a href="#7-lpad-用指定的字符实现左填充指定长度" class="headerlink" title="7.lpad  用指定的字符实现左填充指定长度"></a>7.lpad  用指定的字符实现左填充指定长度</h3><pre><code class="sql">select lpad(&#39;殷素素&#39;,10,&#39;*&#39;) as out_put;
-select lpad(&#39;殷素素&#39;,2,&#39;*&#39;) as out_put;</code></pre>
-<h3 id="8-RPAD-用指定的字符实现右填充指定长度"><a href="#8-RPAD-用指定的字符实现右填充指定长度" class="headerlink" title="8.RPAD 用指定的字符实现右填充指定长度"></a>8.RPAD 用指定的字符实现右填充指定长度</h3><pre><code class="sql">select RPAD(&#39;君不见高堂明镜悲白发&#39;,15,&#39;*&#39;) as out_put;
-select RPAD(&#39;君不见高堂明镜悲白发&#39;,8,&#39;*&#39;) as out_put;</code></pre>
-<h3 id="9-REPLACE-用指定的字符串去替换指定的字符串"><a href="#9-REPLACE-用指定的字符串去替换指定的字符串" class="headerlink" title="9.REPLACE 用指定的字符串去替换指定的字符串"></a>9.REPLACE 用指定的字符串去替换指定的字符串</h3><pre><code class="sql">select REPLACE(&#39;李白和汪伦是好友&#39;,&#39;汪伦&#39;,&#39;杜甫&#39;) as out_put;</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -547,12 +621,12 @@ select RPAD(&#39;君不见高堂明镜悲白发&#39;,8,&#39;*&#39;) as out_put;<
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见字符函数</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见其它函数</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-07-22, 18:56:49</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-22, 19:05:40</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见字符函数">http://yoursite.com/2020/07/22/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%AD%97%E7%AC%A6%E5%87%BD%E6%95%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2020-07-24, 15:40:53</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-24, 16:04:31</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%85%B6%E5%AE%83%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见其它函数">http://yoursite.com/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%85%B6%E5%AE%83%E5%87%BD%E6%95%B0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
