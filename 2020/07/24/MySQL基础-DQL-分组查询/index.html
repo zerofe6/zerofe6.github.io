@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>tags | bofan&#39;s blog</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="tags | bofan&#39;s blog">
+  <title>MySQL基础-DQL-分组查询 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 数据库 , mysql ">
+  <meta name="description" content="MySQL基础-DQL-分组查询 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -453,19 +453,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-分组查询" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">tags</h1>
+        <h1 class="article-title">MySQL基础-DQL-分组查询</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">数据库</a>
+            
+            <a class="color1">mysql</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-01-10 15:47:00'>2020-01-10 15:47</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-26 19:02:05'>2020-07-24 17:10</time>
         
     </div>
     <div class="article-meta">
@@ -487,7 +501,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单使用"><span class="toc-text">简单使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#案例一：查询每个工种的最高工资"><span class="toc-text">案例一：查询每个工种的最高工资</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例二：查询每个位置上的部门个数"><span class="toc-text">案例二：查询每个位置上的部门个数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加筛选条件"><span class="toc-text">添加筛选条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例一：查询邮箱中包含a字符的每个部门的平均工资"><span class="toc-text">案例一：查询邮箱中包含a字符的每个部门的平均工资</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例二：查询有奖金的每个领导手下员工的最高工资"><span class="toc-text">案例二：查询有奖金的每个领导手下员工的最高工资</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加复杂的筛选条件"><span class="toc-text">添加复杂的筛选条件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例一：查询哪个部门的员工个数大于二"><span class="toc-text">案例一：查询哪个部门的员工个数大于二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例三：查询每个工种有奖金的员工的最高工资-gt-12000的工种编号和其最高工资"><span class="toc-text">案例三：查询每个工种有奖金的员工的最高工资&gt;12000的工种编号和其最高工资</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例四：查询领导编号-gt-102-的每个领导手下的最低工资-gt-5000的领导编号是哪个-以及其最低工资"><span class="toc-text">案例四：查询领导编号&gt;102 的每个领导手下的最低工资&gt;5000的领导编号是哪个 以及其最低工资</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按表达式或函数进行分组"><span class="toc-text">按表达式或函数进行分组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例一：按员工姓名长度分组，查询每一组的员工个数-筛选员工个数-gt-5的有那些"><span class="toc-text">案例一：按员工姓名长度分组，查询每一组的员工个数 筛选员工个数&gt;5的有那些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按多个字段分组"><span class="toc-text">按多个字段分组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例一：查询每个部门-每个工种的员工的平均工资"><span class="toc-text">案例一：查询每个部门 每个工种的员工的平均工资</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加排序"><span class="toc-text">添加排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作业："><span class="toc-text">作业：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作业一：查询各job-id的员工的工资最大值、最小值、平均值、总和并按job-id升序"><span class="toc-text">作业一：查询各job-id的员工的工资最大值、最小值、平均值、总和并按job_id升序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业二：查询员工最高工资和最低工资的差距（DIFFRENCE）"><span class="toc-text">作业二：查询员工最高工资和最低工资的差距（DIFFRENCE）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业三：查询各个管理者手下员工的最低工资，其中-最低工资不能低于6000-没有管理者的员工不计算在内"><span class="toc-text">作业三：查询各个管理者手下员工的最低工资，其中 最低工资不能低于6000 没有管理者的员工不计算在内</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业四：查询所有部门的编号-员工数量和工资平均值-并按工资降序"><span class="toc-text">作业四：查询所有部门的编号  员工数量和工资平均值 并按工资降序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业五：选择具有各个job-id的员工个数"><span class="toc-text">作业五：选择具有各个job_id的员工个数</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -503,7 +517,124 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>语法</li>
+</ul>
+<hr>
+<p>select  分组函数 ，列（要求出现在group by的后面）<br>from 表<br>【where 筛选条件】<br>group by 分组的列表<br>【order by 字句】</p>
+<hr>
+<ul>
+<li><p>注意：</p>
+<pre><code>    要求查询列表必须特殊，要求是分组函数和group by 后出现的子弹</code></pre></li>
+<li><p>特点：<br>一：</p>
+<pre><code>    分组查询中的筛选条件分为两类
+                                数据源                            位置                                关键字
+    分组前筛选        原始表                            GROUP BY 的前面            WHERE
+    分组后筛选        分组后的结果集            GROUP BY 的后面            HAVING
+    1.分组函数做条件肯定是放在having 字句中
+    2.能用分组前筛选的 优先考虑使用分组前筛选 (性能问题)</code></pre><p>二：</p>
+<pre><code>    GROUP BY 字句支持单个字段分组，多个字段分组（字段顺序无要求），表达式或函数(使用较少)</code></pre><p>三：</p>
+<pre><code>    也可以添加排序(放在整个分组查询的最后)</code></pre></li>
+</ul>
+<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><p><b>引入：查询每个部门的平均工资</b></p>
+<pre><code class="sql">
+
+select  avg(salary) from employees;
+select  department_id as  部门编号,avg(salary) as  平均工资 
+from employees GROUP BY department_id;</code></pre>
+<h4 id="案例一：查询每个工种的最高工资"><a href="#案例一：查询每个工种的最高工资" class="headerlink" title="案例一：查询每个工种的最高工资"></a>案例一：查询每个工种的最高工资</h4><pre><code class="sql">select MAX(salary),job_id 
+from employees
+GROUP BY job_id;</code></pre>
+<h3 id="案例二：查询每个位置上的部门个数"><a href="#案例二：查询每个位置上的部门个数" class="headerlink" title="案例二：查询每个位置上的部门个数"></a>案例二：查询每个位置上的部门个数</h3><pre><code class="sql">select location_id, COUNT(*)
+from departments
+GROUP BY location_id;</code></pre>
+<h2 id="添加筛选条件"><a href="#添加筛选条件" class="headerlink" title="添加筛选条件"></a>添加筛选条件</h2><h3 id="案例一：查询邮箱中包含a字符的每个部门的平均工资"><a href="#案例一：查询邮箱中包含a字符的每个部门的平均工资" class="headerlink" title="案例一：查询邮箱中包含a字符的每个部门的平均工资"></a>案例一：查询邮箱中包含a字符的每个部门的平均工资</h3><pre><code class="sql">SELECT
+            avg(salary) ,department_id 
+from 
+            employees
+WHERE
+            email like &#39;%a%&#39; 
+GROUP BY department_id;</code></pre>
+<h3 id="案例二：查询有奖金的每个领导手下员工的最高工资"><a href="#案例二：查询有奖金的每个领导手下员工的最高工资" class="headerlink" title="案例二：查询有奖金的每个领导手下员工的最高工资"></a>案例二：查询有奖金的每个领导手下员工的最高工资</h3><pre><code class="sql">select max(salary) ,manager_id
+from employees
+where commission_pct  is not  NULL
+GROUP BY manager_id;</code></pre>
+<h2 id="添加复杂的筛选条件"><a href="#添加复杂的筛选条件" class="headerlink" title="添加复杂的筛选条件"></a>添加复杂的筛选条件</h2><h3 id="案例一：查询哪个部门的员工个数大于二"><a href="#案例一：查询哪个部门的员工个数大于二" class="headerlink" title="案例一：查询哪个部门的员工个数大于二"></a>案例一：查询哪个部门的员工个数大于二</h3><p>首先查询每个部门的员工个数 再对查询结果进行筛选</p>
+<pre><code class="sql">select * from(
+select  department_id, COUNT(*) as 员工个数
+FROM employees
+GROUP BY department_id
+) as tt
+where 
+tt.`员工个数`&gt;2;
+
+
+select  department_id, COUNT(*) as 员工个数
+FROM employees
+GROUP BY department_id 
+HAVING  员工个数&gt;2</code></pre>
+<h3 id="案例三：查询每个工种有奖金的员工的最高工资-gt-12000的工种编号和其最高工资"><a href="#案例三：查询每个工种有奖金的员工的最高工资-gt-12000的工种编号和其最高工资" class="headerlink" title="案例三：查询每个工种有奖金的员工的最高工资&gt;12000的工种编号和其最高工资"></a>案例三：查询每个工种有奖金的员工的最高工资&gt;12000的工种编号和其最高工资</h3><p>首先 查询每个工种有奖金的员工的最高工资 在进行筛选</p>
+<pre><code class="sql">select job_id,MAX(salary) as 最高工资
+from employees
+where commission_pct is not NULL 
+GROUP BY job_id
+HAVING 最高工资&gt;12000;</code></pre>
+<h3 id="案例四：查询领导编号-gt-102-的每个领导手下的最低工资-gt-5000的领导编号是哪个-以及其最低工资"><a href="#案例四：查询领导编号-gt-102-的每个领导手下的最低工资-gt-5000的领导编号是哪个-以及其最低工资" class="headerlink" title="案例四：查询领导编号&gt;102 的每个领导手下的最低工资&gt;5000的领导编号是哪个 以及其最低工资"></a>案例四：查询领导编号&gt;102 的每个领导手下的最低工资&gt;5000的领导编号是哪个 以及其最低工资</h3><pre><code class="sql">
+
+select manager_id as 领导编号 , MIN(salary) as 最低工资
+from employees
+where manager_id&gt;102
+GROUP BY manager_id
+having 最低工资&gt;5000</code></pre>
+<h2 id="按表达式或函数进行分组"><a href="#按表达式或函数进行分组" class="headerlink" title="按表达式或函数进行分组"></a>按表达式或函数进行分组</h2><h3 id="案例一：按员工姓名长度分组，查询每一组的员工个数-筛选员工个数-gt-5的有那些"><a href="#案例一：按员工姓名长度分组，查询每一组的员工个数-筛选员工个数-gt-5的有那些" class="headerlink" title="案例一：按员工姓名长度分组，查询每一组的员工个数 筛选员工个数&gt;5的有那些"></a>案例一：按员工姓名长度分组，查询每一组的员工个数 筛选员工个数&gt;5的有那些</h3><pre><code class="sql">select 
+            LENGTH(last_name) 员工姓名长度 , COUNT(*) 员工个数
+from employees
+GROUP BY  员工姓名长度
+having 员工个数&gt;5;</code></pre>
+<h3 id="按多个字段分组"><a href="#按多个字段分组" class="headerlink" title="按多个字段分组"></a>按多个字段分组</h3><h3 id="案例一：查询每个部门-每个工种的员工的平均工资"><a href="#案例一：查询每个部门-每个工种的员工的平均工资" class="headerlink" title="案例一：查询每个部门 每个工种的员工的平均工资"></a>案例一：查询每个部门 每个工种的员工的平均工资</h3><pre><code class="sql">
+
+select 
+            AVG(salary) as 平均工资, department_id, job_id
+from 
+        employees
+GROUP BY department_id,job_id;</code></pre>
+<h4 id="添加排序"><a href="#添加排序" class="headerlink" title="添加排序"></a>添加排序</h4><p><b>案例一：查询每个部门 每个工种的员工的平均工资  并按工资高低进行排序</b></p>
+<pre><code class="sql">select 
+            AVG(salary) as 平均工资, department_id, job_id 
+from 
+        employees
+WHERE  department_id is  not null
+GROUP BY department_id,job_id
+ORDER BY 平均工资 DESC;</code></pre>
+<h2 id="作业："><a href="#作业：" class="headerlink" title="作业："></a>作业：</h2><h3 id="作业一：查询各job-id的员工的工资最大值、最小值、平均值、总和并按job-id升序"><a href="#作业一：查询各job-id的员工的工资最大值、最小值、平均值、总和并按job-id升序" class="headerlink" title="作业一：查询各job-id的员工的工资最大值、最小值、平均值、总和并按job_id升序"></a>作业一：查询各job-id的员工的工资最大值、最小值、平均值、总和并按job_id升序</h3><pre><code class="sql">SELECT
+        job_id , MAX(salary) 工资最大值 , MIN(salary) 工资最小值, AVG(salary) 工资平均值,
+        SUM(salary) 工资总和
+from 
+        employees
+group by job_id
+ORDER BY job_id ASC;</code></pre>
+<h3 id="作业二：查询员工最高工资和最低工资的差距（DIFFRENCE）"><a href="#作业二：查询员工最高工资和最低工资的差距（DIFFRENCE）" class="headerlink" title="作业二：查询员工最高工资和最低工资的差距（DIFFRENCE）"></a>作业二：查询员工最高工资和最低工资的差距（DIFFRENCE）</h3><pre><code class="sql">SELECT
+            MAX(salary )- MIN(salary) as diffrence,  department_id
+from employees
+GROUP  BY  department_id;</code></pre>
+<h3 id="作业三：查询各个管理者手下员工的最低工资，其中-最低工资不能低于6000-没有管理者的员工不计算在内"><a href="#作业三：查询各个管理者手下员工的最低工资，其中-最低工资不能低于6000-没有管理者的员工不计算在内" class="headerlink" title="作业三：查询各个管理者手下员工的最低工资，其中 最低工资不能低于6000 没有管理者的员工不计算在内"></a>作业三：查询各个管理者手下员工的最低工资，其中 最低工资不能低于6000 没有管理者的员工不计算在内</h3><pre><code class="sql">select 
+            MIN(salary) 最低工资 ,department_id
+from employees
+where department_id is not null
+GROUP BY department_id 
+HAVING 最低工资&gt;=6000</code></pre>
+<h3 id="作业四：查询所有部门的编号-员工数量和工资平均值-并按工资降序"><a href="#作业四：查询所有部门的编号-员工数量和工资平均值-并按工资降序" class="headerlink" title="作业四：查询所有部门的编号  员工数量和工资平均值 并按工资降序"></a>作业四：查询所有部门的编号  员工数量和工资平均值 并按工资降序</h3><pre><code class="sql">
+
+SELECT
+            department_id,COUNT(*), ROUND(avg(salary),2) 工资平均值
+from  employees
+GROUP BY department_id
+ORDER BY 工资平均值 DESC;</code></pre>
+<h3 id="作业五：选择具有各个job-id的员工个数"><a href="#作业五：选择具有各个job-id的员工个数" class="headerlink" title="作业五：选择具有各个job_id的员工个数"></a>作业五：选择具有各个job_id的员工个数</h3><pre><code class="sql">SELECT 
+            job_id ,COUNT(*)
+ from employees
+GROUP BY job_id;</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
     </div>
@@ -514,6 +645,18 @@
     <a  class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-分组查询</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-24, 17:10:19</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-26, 19:02:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/" title="MySQL基础-DQL-分组查询">http://yoursite.com/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
