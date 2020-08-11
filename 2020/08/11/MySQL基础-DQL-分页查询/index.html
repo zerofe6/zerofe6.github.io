@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础_MySQL常见命令 | bofan&#39;s blog</title>
-  <meta name="keywords" content=" xxx ">
-  <meta name="description" content="MySQL基础_MySQL常见命令 | bofan&#39;s blog">
+  <title>MySQL基础-DQL-分页查询 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 数据库 , mysql ">
+  <meta name="description" content="MySQL基础-DQL-分页查询 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -493,25 +493,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-MySQL常见命令-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-分页查询" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础_MySQL常见命令</h1>
+        <h1 class="article-title">MySQL基础-DQL-分页查询</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a class="color4">xxx</a>
+            <a class="color4">数据库</a>
+            
+            <a class="color1">mysql</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-06-03 20:04:48'>2020-06-03 20:04</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-11 22:54:14'>2020-08-11 22:06</time>
         
     </div>
     <div class="article-meta">
@@ -533,7 +541,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#分页查询"><span class="toc-text">分页查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例1：查询前5条员工信息"><span class="toc-text">案例1：查询前5条员工信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询第11条到第25条"><span class="toc-text">查询第11条到第25条</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例3：查询有奖金的员工信息-，并且工资较高的前十名"><span class="toc-text">案例3：查询有奖金的员工信息 ，并且工资较高的前十名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业"><span class="toc-text">作业</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作业1：-查询所有学员的邮箱的用户名（注意：邮箱-前面的字符）"><span class="toc-text">作业1： 查询所有学员的邮箱的用户名（注意：邮箱@前面的字符）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业2：查询男生和女生的个数"><span class="toc-text">作业2：查询男生和女生的个数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业3：查询年龄-gt-18岁的所有学生的姓名和年级名称"><span class="toc-text">作业3：查询年龄&gt;18岁的所有学生的姓名和年级名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业4：查询哪个年级的学生最小年龄-gt-20岁"><span class="toc-text">作业4：查询哪个年级的学生最小年龄&gt;20岁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业5：试说出查询语句中涉及到的所有-关键字-以及执行先后顺序"><span class="toc-text">作业5：试说出查询语句中涉及到的所有    关键字 以及执行先后顺序</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -549,7 +557,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><p>应用场景：当要显示的数据有多页显示需求时 需要分页提交sql请求</p>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><p>​        select 查询列表<br>​        from 表<br>​        【join type】 join 表2<br>​        on  连接条件<br>​        where 筛选条件<br>​        group by 分组字段<br>​        HAVING 分组后筛选<br>​        order by 排序条件<br>​        limit offset ，seize ;<br>​        </p>
+<pre><code>    offset :要显示条目的起始索引（起始索引从0开始）
+    size : 要显示的条目个数</code></pre><h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><p>​        limit语句放在查询语句的最后<br>​        公式：<br>​        例：<br>​        要显示的页数为page ，每页的条目数为size<br>​        SELECT 查询列表<br>​        from 表<br>​        limit  (page-1)*size,size;<br>​        </p>
+<h3 id="案例1：查询前5条员工信息"><a href="#案例1：查询前5条员工信息" class="headerlink" title="案例1：查询前5条员工信息"></a>案例1：查询前5条员工信息</h3><pre><code class="sql">SELECT *
+from employees 
+limit 0 ,5;
+
+SELECT *
+from employees 
+limit 5;</code></pre>
+<h3 id="查询第11条到第25条"><a href="#查询第11条到第25条" class="headerlink" title="查询第11条到第25条"></a>查询第11条到第25条</h3><pre><code class="sql">SELECT *
+from employees 
+limit 10 ,15;</code></pre>
+<h3 id="案例3：查询有奖金的员工信息-，并且工资较高的前十名"><a href="#案例3：查询有奖金的员工信息-，并且工资较高的前十名" class="headerlink" title="案例3：查询有奖金的员工信息 ，并且工资较高的前十名"></a>案例3：查询有奖金的员工信息 ，并且工资较高的前十名</h3><pre><code class="sql">
+
+SELECT
+    *
+FROM
+    employees
+WHERE
+    commission_pct IS NOT NULL
+ORDER BY
+    salary DESC
+LIMIT 10;</code></pre>
+<p>已知表stuinfo<br>id 学号<br>name 姓名<br>email 邮箱 <a href="mailto:john@126.com">john@126.com</a><br>gradeId 年纪编号<br>sex 性别<br>age 年龄</p>
+<p>已知表grade<br>id  年纪编号<br>gradeName 年级名称</p>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><h4 id="作业1：-查询所有学员的邮箱的用户名（注意：邮箱-前面的字符）"><a href="#作业1：-查询所有学员的邮箱的用户名（注意：邮箱-前面的字符）" class="headerlink" title="作业1： 查询所有学员的邮箱的用户名（注意：邮箱@前面的字符）"></a>作业1： 查询所有学员的邮箱的用户名（注意：邮箱@前面的字符）</h4><pre><code class="sql">SELECT SUBSTR(email ,1,INSTR(email,&#39;@&#39;) -1)
+from stuinfo;</code></pre>
+<h4 id="作业2：查询男生和女生的个数"><a href="#作业2：查询男生和女生的个数" class="headerlink" title="作业2：查询男生和女生的个数"></a>作业2：查询男生和女生的个数</h4><pre><code class="sql">SELECT sex,COUNT(*)
+from sutinfo
+GROUP BY sex;</code></pre>
+<h4 id="作业3：查询年龄-gt-18岁的所有学生的姓名和年级名称"><a href="#作业3：查询年龄-gt-18岁的所有学生的姓名和年级名称" class="headerlink" title="作业3：查询年龄&gt;18岁的所有学生的姓名和年级名称"></a>作业3：查询年龄&gt;18岁的所有学生的姓名和年级名称</h4><pre><code class="sq1">SELECT  s.name , g.greadeName
+from stuinfo s
+INNER JOIN grade g
+on s.gradeId = g.id
+where age&gt;18;</code></pre>
+<h4 id="作业4：查询哪个年级的学生最小年龄-gt-20岁"><a href="#作业4：查询哪个年级的学生最小年龄-gt-20岁" class="headerlink" title="作业4：查询哪个年级的学生最小年龄&gt;20岁"></a>作业4：查询哪个年级的学生最小年龄&gt;20岁</h4><pre><code class="sql">SELECT g.gradeName,MIN(s.age)
+from stuinfo s
+INNER JOIN grade g
+on s.gradeId = g.id
+GROUP BY g.id 
+HAVING MIN(s.age)&gt;20;</code></pre>
+<h4 id="作业5：试说出查询语句中涉及到的所有-关键字-以及执行先后顺序"><a href="#作业5：试说出查询语句中涉及到的所有-关键字-以及执行先后顺序" class="headerlink" title="作业5：试说出查询语句中涉及到的所有    关键字 以及执行先后顺序"></a>作业5：试说出查询语句中涉及到的所有    关键字 以及执行先后顺序</h4><p>select  查询列表                                        第七步<br>from 表                                                                  第一步执行<br>连接类型 join  表2                                                第二步执行<br>on 连接条件                                                         第三步执行<br>where 筛选条件                                                   第四步<br>GROUP BY 分组列表                                           第五步<br>having  分组后的筛选条件                                 第六步<br>ORDER BY 排序列表                                           第八步<br>limit 偏移 , 条目数;                                             第九步</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
     </div>
@@ -562,12 +614,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础_MySQL常见命令</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-分页查询</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-06-03, 20:04:48</p>
-    <p><span class="copy-title">最后更新:</span>2020-06-03, 20:04:48</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-MySQL%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1/" title="MySQL基础_MySQL常见命令">http://yoursite.com/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-MySQL%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-11, 22:06:39</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-11, 22:54:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/" title="MySQL基础-DQL-分页查询">http://yoursite.com/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

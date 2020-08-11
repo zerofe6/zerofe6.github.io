@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础-DQL-常见其它函数 | bofan&#39;s blog</title>
+  <title>MySQL基础-DQL-连接查询 | bofan&#39;s blog</title>
   <meta name="keywords" content=" 数据库 , mysql ">
-  <meta name="description" content="MySQL基础-DQL-常见其它函数 | bofan&#39;s blog">
+  <meta name="description" content="MySQL基础-DQL-连接查询 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -493,9 +493,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-DQL-常见其它函数" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-连接查询" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础-DQL-常见其它函数</h1>
+        <h1 class="article-title">MySQL基础-DQL-连接查询</h1>
     
     <div class="article-meta">
         
@@ -519,7 +519,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-24 16:04:31'>2020-07-24 15:40</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-11 22:46:47'>2020-08-11 22:04</time>
         
     </div>
     <div class="article-meta">
@@ -541,7 +541,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#四：其它函数"><span class="toc-text">四：其它函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VERSION-查看版本号"><span class="toc-text">VERSION()查看版本号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DATABASE-查看数据库"><span class="toc-text">DATABASE()查看数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USER-查看当前用户"><span class="toc-text">USER&#96;() 查看当前用户</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五：流程控制函数"><span class="toc-text">五：流程控制函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-if-函数：-if-else-的效果"><span class="toc-text">1.if 函数： if else 的效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询员工是否有奖金"><span class="toc-text">查询员工是否有奖金</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-case-函数的使用一：switch-case-效果"><span class="toc-text">2.case 函数的使用一：switch case 效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-case-函数的使用二：类似于多重if"><span class="toc-text">3.case 函数的使用二：类似于多重if</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作业"><span class="toc-text">作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作业一："><span class="toc-text">作业一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业二：-查询员工号-、姓名、工资-，以及工资提高20-后的结果"><span class="toc-text">作业二： 查询员工号 、姓名、工资 ，以及工资提高20%后的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业三：将员工姓名按首字母排序-与姓名排序是不一样的-并写出姓名的长度"><span class="toc-text">作业三：将员工姓名按首字母排序(与姓名排序是不一样的) 并写出姓名的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业四：做一个查询产生下面的结果"><span class="toc-text">作业四：做一个查询产生下面的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业五：按照下面的条件使用case-WHEN"><span class="toc-text">作业五：按照下面的条件使用case WHEN</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#连接查询"><span class="toc-text">连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#含义："><span class="toc-text">含义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类："><span class="toc-text">分类：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、sql92标准"><span class="toc-text">一、sql92标准</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-等值连接："><span class="toc-text">1.等值连接：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#案例1：查询女神民对应的男神民"><span class="toc-text">案例1：查询女神民对应的男神民</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例2：查询员工名对应的部门名"><span class="toc-text">案例2：查询员工名对应的部门名</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-为表取别名"><span class="toc-text">2.为表取别名</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查询工种号-、-员工名、工种名"><span class="toc-text">查询工种号 、 员工名、工种名</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-两个表的顺序是否可以调换"><span class="toc-text">3.两个表的顺序是否可以调换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-可以加上筛选？"><span class="toc-text">4.可以加上筛选？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#案例：查询有奖金的员工名、部门名"><span class="toc-text">案例：查询有奖金的员工名、部门名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例2-查询城市名中第二个字符为o的部门名和城市名"><span class="toc-text">案例2:查询城市名中第二个字符为o的部门名和城市名</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-可以加分组"><span class="toc-text">5.可以加分组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#案例2：查询有奖金的每个部门部门名和部门的领导编号和部门的最低工资"><span class="toc-text">案例2：查询有奖金的每个部门部门名和部门的领导编号和部门的最低工资</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#错误示例"><span class="toc-text">错误示例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-可以加排序"><span class="toc-text">6.可以加排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#案例1：查询每个工种的工种名、和员工个数-并按员工个数降序"><span class="toc-text">案例1：查询每个工种的工种名、和员工个数 并按员工个数降序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-可以实现三表连接"><span class="toc-text">7.可以实现三表连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#案例：查询员工名、部门名、和所在的城市"><span class="toc-text">案例：查询员工名、部门名、和所在的城市</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-非等值连接"><span class="toc-text">2.非等值连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#案例1：查询员工的工资和工资级别"><span class="toc-text">案例1：查询员工的工资和工资级别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-自连接"><span class="toc-text">3.自连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#案例：查询员工名以及它的上级的名称"><span class="toc-text">案例：查询员工名以及它的上级的名称</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业-1"><span class="toc-text">作业 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作业1：显示员工表的最大工资-，工资平均值"><span class="toc-text">作业1：显示员工表的最大工资 ，工资平均值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业2：查询员工表的员工编号、职位编号、姓名、按部门编号降序-工资升序"><span class="toc-text">作业2：查询员工表的员工编号、职位编号、姓名、按部门编号降序 工资升序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业3：查询员工表中job-id-包含a和e的-并且a在e的前面"><span class="toc-text">作业3：查询员工表中job_id 包含a和e的 并且a在e的前面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业4：已知表student-里面有-id-学号、-name-、gradeId年级编号"><span class="toc-text">作业4：已知表student 里面有 id 学号、 name 、gradeId年级编号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业5-显示当前日期，以及去前后空格-截取子字串的函数"><span class="toc-text">作业5:显示当前日期，以及去前后空格  截取子字串的函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作业2"><span class="toc-text">作业2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作业1：显示所有员工的姓名、部门号和部门名称"><span class="toc-text">作业1：显示所有员工的姓名、部门号和部门名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业2：查询90号部门员工的job-id-和90号部门的location-id"><span class="toc-text">作业2：查询90号部门员工的job_id 和90号部门的location_id</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业三：查询所有有奖金的员工的last-name-department-name-location-id-city"><span class="toc-text">作业三：查询所有有奖金的员工的last_name department_name location_id city</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业四：选择city-在Toronto-工作的员工的last-name-job-id-department-id-department-name"><span class="toc-text">作业四：选择city 在Toronto 工作的员工的last_name job_id  department_id  department_name</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业五：查询每个工种、每个部门的部门名、工种名、和最低工资"><span class="toc-text">作业五：查询每个工种、每个部门的部门名、工种名、和最低工资</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业六：查询每个国家的部门个数大于2的国家编号"><span class="toc-text">作业六：查询每个国家的部门个数大于2的国家编号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作业七：选择指定的员工姓名、员工号以及它的管理者的姓名和员工号"><span class="toc-text">作业七：选择指定的员工姓名、员工号以及它的管理者的姓名和员工号</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -557,113 +557,163 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="四：其它函数"><a href="#四：其它函数" class="headerlink" title="四：其它函数"></a>四：其它函数</h2><h3 id="VERSION-查看版本号"><a href="#VERSION-查看版本号" class="headerlink" title="VERSION()查看版本号"></a>VERSION()查看版本号</h3><pre><code class="sql">select version() as out_put;</code></pre>
-<h3 id="DATABASE-查看数据库"><a href="#DATABASE-查看数据库" class="headerlink" title="DATABASE()查看数据库"></a><code>DATABASE</code>()查看数据库</h3><pre><code class="sql">select DATABASE() as out_put;</code></pre>
-<h3 id="USER-查看当前用户"><a href="#USER-查看当前用户" class="headerlink" title="USER`() 查看当前用户"></a>USER`() 查看当前用户</h3><pre><code class="sql">select USER()</code></pre>
-<h2 id="五：流程控制函数"><a href="#五：流程控制函数" class="headerlink" title="五：流程控制函数"></a>五：流程控制函数</h2><h3 id="1-if-函数：-if-else-的效果"><a href="#1-if-函数：-if-else-的效果" class="headerlink" title="1.if 函数： if else 的效果"></a>1.if 函数： if else 的效果</h3><pre><code class="sql">select if(10&gt;5,&#39;大&#39;,&#39;小&#39;); </code></pre>
-<h3 id="查询员工是否有奖金"><a href="#查询员工是否有奖金" class="headerlink" title="查询员工是否有奖金"></a>查询员工是否有奖金</h3><pre><code class="sql">select 
-            last_name as  姓名,
-            if(commission_pct is null,&#39;有奖金&#39;,&#39;没有奖金&#39;) as  奖金情况
-from 
-            employees;</code></pre>
-<h3 id="2-case-函数的使用一：switch-case-效果"><a href="#2-case-函数的使用一：switch-case-效果" class="headerlink" title="2.case 函数的使用一：switch case 效果"></a>2.case 函数的使用一：switch case 效果</h3><p>java 中<br>switch(变量或表达式)<br>        case 常量1:表达式 break;<br>        case 常量2:表达式 break;<br>        case 常量3:表达式 break;<br>        …<br>        default ：语句n break;</p>
-<p>mysql中<br>case 要判断的字段或者表达式<br>when 常量1 then 值1或语句1;<br>when 常量2 then 值2或语句2;<br>when 常量3 then 值3或语句3;<br>…<br>else 要显示的值n或者语句n;<br>end</p>
-<p>查询员工的工资<br>部门号=30 ，显示的工资为1.1倍<br>部门号=40 ，显示的工资为1.2倍<br>部门号=50 ，显示的工资为1.3倍<br>其他部门为原工资</p>
-<pre><code class="sql">SELECT    
-            department_id,
-            salary as 原始工资,
-            case department_id
-            when 30 then salary*1.1
-            when 40 then salary*1.2
-            when 50 then salary*1.3
-            else  salary
-            end as 新工资
-from 
-            employees;</code></pre>
-<h3 id="3-case-函数的使用二：类似于多重if"><a href="#3-case-函数的使用二：类似于多重if" class="headerlink" title="3.case 函数的使用二：类似于多重if"></a>3.case 函数的使用二：类似于多重if</h3><p>java 中<br>if(条件1){<br>    语句1;<br>}else if(条件2){<br>    语句2;<br>}else if(条件3){<br>    语句3;<br>}…<br>else{<br>    语句n;<br>}</p>
-<p>mysql中<br>case<br>when 条件1  then 要显示的值1 或语句1<br>when 条件2  then 要显示的值2 或语句2<br>…<br>else 要显示的值n 或语句n<br>end </p>
-<p>案例： 查询员工的工资情况<br>如果工资&gt;20000 显示A级别<br>如果工资&gt;15000 显示B级别<br>如果工资&gt;10000 显示C级别<br>否则 显示D级别</p>
-<pre><code class="sql">select 
-            salary as 工资,
-            CASE    
-            when salary&gt;20000 then &#39;A&#39;
-            when salary&gt;15000 then &#39;B&#39;
-            when salary&gt;10000 then &#39;C&#39;
-            else  &#39;D&#39;
-            end
-            as 工资级别
-from  
-            employees;</code></pre>
-<pre><code>字符函数：
-        LENGTH
-        CONCAT
-        substr
-        instr
-        trim
-        upper 
-        lower 
-        lpad 
-        rpad 
-        replace 
-数学函数
-        round 
-        ceil 
-        floor 
-        truncate  
-        MOD
+        <h1 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h1><h3 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h3><p>又称多表查询 查询的字段来源于多个表格时， 用到多表查询</p>
+<p>笛卡尔乘积现象：<br>        表1有n行 表2有m行 总计结果 m*n行<br>发生原因：没有有效的连接条件<br>如何避免：添加有效的连接条件</p>
+<h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><p>​                按年代分类：<br>​                sql92标准：仅仅支持内连接<br>​                sql99标准（推荐使用）：支持内连接 、外连接（左外连接、右外连接） 、交叉连接</p>
+<pre><code>            按功能进行分类：
+            内连接：
+                        等值连接
+                        非等值连接
+                        自连接
+            外连接
+                        左外连接
+                        右外连接
+                        全外连接
+            交叉连接</code></pre><pre><code class="sql">select * from beauty;
+select * from boys;
 
-日期函数
-        now 
-          curdate 
-        curtime 
-          year 
-        month 
-        monthname 
-        day 
-        hour 
-        minute 
-        second 
-        str_to_date 
-        date_format 
 
-其他函数
-        VERSION()
-        DATABASE
-        user 
-        IF
-        case </code></pre><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><h3 id="作业一："><a href="#作业一：" class="headerlink" title="作业一："></a>作业一：</h3><pre><code class="sql">select NOW(); </code></pre>
-<h3 id="作业二：-查询员工号-、姓名、工资-，以及工资提高20-后的结果"><a href="#作业二：-查询员工号-、姓名、工资-，以及工资提高20-后的结果" class="headerlink" title="作业二： 查询员工号 、姓名、工资 ，以及工资提高20%后的结果"></a>作业二： 查询员工号 、姓名、工资 ，以及工资提高20%后的结果</h3><pre><code class="sql">select 
-            employee_id as 员工号,
-            CONCAT(last_name,&#39; &#39;,first_name) as 姓名,
-            salary as 工资,
-            salary * 1.2 as  新工资
-from 
-        employees;</code></pre>
-<h3 id="作业三：将员工姓名按首字母排序-与姓名排序是不一样的-并写出姓名的长度"><a href="#作业三：将员工姓名按首字母排序-与姓名排序是不一样的-并写出姓名的长度" class="headerlink" title="作业三：将员工姓名按首字母排序(与姓名排序是不一样的) 并写出姓名的长度"></a>作业三：将员工姓名按首字母排序(与姓名排序是不一样的) 并写出姓名的长度</h3><pre><code class="sql">select 
-            LENGTH(last_name) as  姓名长度,
-            last_name as 姓名
+select name , boyName  from beauty ,boys;
+笛卡尔集的错误情况
+select count(*) from beauty;
+select count(*) from boys;
+第一个表输出12行
+第二个表输入4行
+最终结果 总计：12*4 = 48行 
+select name , boyName  from beauty ,boys where beauty.boyfriend_id = boys.id;</code></pre>
+<h2 id="一、sql92标准"><a href="#一、sql92标准" class="headerlink" title="一、sql92标准"></a>一、sql92标准</h2><h3 id="1-等值连接："><a href="#1-等值连接：" class="headerlink" title="1.等值连接："></a>1.等值连接：</h3><ul>
+<li>1.多表等值连接的结果为多表的交集部分</li>
+<li>2.n个表连接 至少需要n-1个连接条件</li>
+<li>3.多表的顺序没有要求</li>
+<li>4.一般需要为表取别名</li>
+<li>5.可以搭配前面介绍的所有字句使用 比如排序、分组、筛选</li>
+</ul>
+<h5 id="案例1：查询女神民对应的男神民"><a href="#案例1：查询女神民对应的男神民" class="headerlink" title="案例1：查询女神民对应的男神民"></a>案例1：查询女神民对应的男神民</h5><pre><code class="sql">select  name, boyName
+from beauty ,boys
+WHERE beauty.boyfriend_id = boys.id;</code></pre>
+<h5 id="案例2：查询员工名对应的部门名"><a href="#案例2：查询员工名对应的部门名" class="headerlink" title="案例2：查询员工名对应的部门名"></a>案例2：查询员工名对应的部门名</h5><pre><code class="sql">SELECT last_name 员工名, department_name 部门名
+FROM myemployees.employees,myemployees.departments
+where myemployees.employees.department_id = myemployees.departments.department_id;</code></pre>
+<h4 id="2-为表取别名"><a href="#2-为表取别名" class="headerlink" title="2.为表取别名"></a>2.为表取别名</h4><p>提高语句的简介度<br>区分多个重名的字段<br>注意：<br>        如果为表    取了别名 则查询的字段就不能再用原来的表名去限定</p>
+<h5 id="查询工种号-、-员工名、工种名"><a href="#查询工种号-、-员工名、工种名" class="headerlink" title="查询工种号 、 员工名、工种名"></a>查询工种号 、 员工名、工种名</h5><pre><code class="sql">select last_name 员工名, myemployees.employees.job_id  工种号, job_title 工种名
+from myemployees.employees , myemployees.jobs
+WHERE myemployees.employees.job_id = myemployees.jobs.job_id;
+
+select last_name 员工名,j.job_id  工种号, job_title 工种名
+from myemployees.employees e , myemployees.jobs j
+WHERE e.job_id = j.job_id;</code></pre>
+<h4 id="3-两个表的顺序是否可以调换"><a href="#3-两个表的顺序是否可以调换" class="headerlink" title="3.两个表的顺序是否可以调换"></a>3.两个表的顺序是否可以调换</h4><pre><code class="sql">select last_name 员工名,j.job_id  工种号, job_title 工种名
+from  myemployees.jobs j,myemployees.employees e 
+WHERE e.job_id = j.job_id;</code></pre>
+<h4 id="4-可以加上筛选？"><a href="#4-可以加上筛选？" class="headerlink" title="4.可以加上筛选？"></a>4.可以加上筛选？</h4><h5 id="案例：查询有奖金的员工名、部门名"><a href="#案例：查询有奖金的员工名、部门名" class="headerlink" title="案例：查询有奖金的员工名、部门名"></a>案例：查询有奖金的员工名、部门名</h5><pre><code class="sql">SELECT e.last_name ,d.department_name,e.commission_pct
+from myemployees.employees e,myemployees.departments d
+WHERE e.commission_pct is not null and e.department_id = d.department_id;</code></pre>
+<h5 id="案例2-查询城市名中第二个字符为o的部门名和城市名"><a href="#案例2-查询城市名中第二个字符为o的部门名和城市名" class="headerlink" title="案例2:查询城市名中第二个字符为o的部门名和城市名"></a>案例2:查询城市名中第二个字符为o的部门名和城市名</h5><pre><code class="sql">
+SELECT l.city , d.department_name
+from myemployees.departments d,myemployees.locations l
+WHERE l.location_id = d.location_id  and l.city LIKE &#39;_o%&#39;;
+
+SELECT *
 FROM
-            employees
-ORDER BY SUBSTR(last_name,1,1) asc;</code></pre>
-<h3 id="作业四：做一个查询产生下面的结果"><a href="#作业四：做一个查询产生下面的结果" class="headerlink" title="作业四：做一个查询产生下面的结果"></a>作业四：做一个查询产生下面的结果</h3><p><last_name> earns <salary> monthly  but wants &lt;salary*3&gt;<br>Dream salary<br>King earns 24000 monthly but wants 72000</salary></last_name></p>
-<pre><code class="sql">select 
-            CONCAT(last_name,&#39; earns &#39;,salary,&#39; monthly  but wants &#39;,salary*3) 
-            as  &#39;Dream salary&#39;
-from 
-            employees
-where  
-            salary &lt;=&gt; 24000;</code></pre>
-<h3 id="作业五：按照下面的条件使用case-WHEN"><a href="#作业五：按照下面的条件使用case-WHEN" class="headerlink" title="作业五：按照下面的条件使用case WHEN"></a>作业五：按照下面的条件使用case WHEN</h3><p>​    job  grade<br>​    AD_PRES  A<br>​    ST_MAN B<br>​    IT_PROG C</p>
-<pre><code class="sql">select 
-            job_id as job,
-            case 
-            when job_id=&#39;AD_PRES&#39; then &#39;A&#39;
-            when job_id=&#39;ST_MAN&#39; then &#39;B&#39;
-            when job_id=&#39;IT_PROG&#39; then &#39;C&#39;
-            else &#39;级别未知&#39;
-            end as grade
-from 
-            employees</code></pre>
+myemployees.employees;</code></pre>
+<h4 id="5-可以加分组"><a href="#5-可以加分组" class="headerlink" title="5.可以加分组"></a>5.可以加分组</h4><p>#案例1:查询每个城市的部门个数</p>
+<pre><code class="sql">
+SELECT count(*) 部门个数 ,l.city
+FROM myemployees.locations l, myemployees.departments d
+WHERE l.location_id = d.location_id GROUP BY l.city;</code></pre>
+<h5 id="案例2：查询有奖金的每个部门部门名和部门的领导编号和部门的最低工资"><a href="#案例2：查询有奖金的每个部门部门名和部门的领导编号和部门的最低工资" class="headerlink" title="案例2：查询有奖金的每个部门部门名和部门的领导编号和部门的最低工资"></a>案例2：查询有奖金的每个部门部门名和部门的领导编号和部门的最低工资</h5><h5 id="错误示例"><a href="#错误示例" class="headerlink" title="错误示例"></a>错误示例</h5><pre><code class="sql">SELECT e.commission_pct 奖金, d.department_name 部门名, e.manager_id 领导编号, count(*) 个数,MIN(e.salary)
+from myemployees.employees e,myemployees.departments d
+WHERE e.commission_pct is not null and e.department_id = d.department_id
+GROUP BY d.department_name,e.manager_id
+;
+
+SELECT e.commission_pct 奖金, d.department_name 部门名, d.manager_id 领导编号, count(*) 个数,MIN(e.salary)
+from myemployees.employees e,myemployees.departments d
+WHERE e.commission_pct is not null and e.department_id = d.department_id
+GROUP BY d.department_name,d.manager_id
+;</code></pre>
+<h4 id="6-可以加排序"><a href="#6-可以加排序" class="headerlink" title="6.可以加排序"></a>6.可以加排序</h4><h5 id="案例1：查询每个工种的工种名、和员工个数-并按员工个数降序"><a href="#案例1：查询每个工种的工种名、和员工个数-并按员工个数降序" class="headerlink" title="案例1：查询每个工种的工种名、和员工个数 并按员工个数降序"></a>案例1：查询每个工种的工种名、和员工个数 并按员工个数降序</h5><pre><code class="sql">select j.job_title 工种名, COUNT(*) 员工个数  
+from myemployees.employees e ,myemployees.jobs j
+WHERE e.job_id = j.job_id GROUP BY e.job_id order by COUNT(*)  desc;</code></pre>
+<h4 id="7-可以实现三表连接"><a href="#7-可以实现三表连接" class="headerlink" title="7.可以实现三表连接"></a>7.可以实现三表连接</h4><h5 id="案例：查询员工名、部门名、和所在的城市"><a href="#案例：查询员工名、部门名、和所在的城市" class="headerlink" title="案例：查询员工名、部门名、和所在的城市"></a>案例：查询员工名、部门名、和所在的城市</h5><pre><code class="sql">select e.last_name 员工名 , d.department_name 部门名, l.city 城市
+from myemployees.employees e, myemployees.departments d,myemployees.locations l
+where e.department_id = d.department_id and d.location_id = l.location_id;</code></pre>
+<h3 id="2-非等值连接"><a href="#2-非等值连接" class="headerlink" title="2.非等值连接"></a>2.非等值连接</h3><pre><code class="sql">#工资等级
+
+CREATE TABLE job_grades
+(grade_level VARCHAR(3),
+ lowest_sal  int,
+ highest_sal int);
+
+INSERT INTO job_grades
+VALUES (&#39;A&#39;, 1000, 2999);
+
+INSERT INTO job_grades
+VALUES (&#39;B&#39;, 3000, 5999);
+
+INSERT INTO job_grades
+VALUES(&#39;C&#39;, 6000, 9999);
+
+INSERT INTO job_grades
+VALUES(&#39;D&#39;, 10000, 14999);
+
+INSERT INTO job_grades
+VALUES(&#39;E&#39;, 15000, 24999);
+
+INSERT INTO job_grades
+VALUES(&#39;F&#39;, 25000, 40000);</code></pre>
+<h4 id="案例1：查询员工的工资和工资级别"><a href="#案例1：查询员工的工资和工资级别" class="headerlink" title="案例1：查询员工的工资和工资级别"></a>案例1：查询员工的工资和工资级别</h4><pre><code class="sq1">SELECT * from job_grades;
+
+SELECT e.last_name 姓名 , e.salary 工资 ,jg.grade_level 工资等级
+from myemployees.employees e, girls.job_grades jg
+WHERE e.salary BETWEEN jg.lowest_sal and jg.highest_sal;</code></pre>
+<h3 id="3-自连接"><a href="#3-自连接" class="headerlink" title="3.自连接"></a>3.自连接</h3><h4 id="案例：查询员工名以及它的上级的名称"><a href="#案例：查询员工名以及它的上级的名称" class="headerlink" title="案例：查询员工名以及它的上级的名称"></a>案例：查询员工名以及它的上级的名称</h4><pre><code class="sql">
+SELECT  e.employee_id 员工编号 , e.manager_id 对应领导编号, e.last_name 员工名, es.last_name 领导名称
+from myemployees.employees e,myemployees.employees es
+WHERE e.manager_id is not null and e.manager_id = es.employee_id;</code></pre>
+<h3 id="作业-1"><a href="#作业-1" class="headerlink" title="作业 1"></a>作业 1</h3><h4 id="作业1：显示员工表的最大工资-，工资平均值"><a href="#作业1：显示员工表的最大工资-，工资平均值" class="headerlink" title="作业1：显示员工表的最大工资 ，工资平均值"></a>作业1：显示员工表的最大工资 ，工资平均值</h4><pre><code class="sql">
+SELECT MAX(e.salary) ,avg(e.salary)
+from myemployees.employees e ;</code></pre>
+<h4 id="作业2：查询员工表的员工编号、职位编号、姓名、按部门编号降序-工资升序"><a href="#作业2：查询员工表的员工编号、职位编号、姓名、按部门编号降序-工资升序" class="headerlink" title="作业2：查询员工表的员工编号、职位编号、姓名、按部门编号降序 工资升序"></a>作业2：查询员工表的员工编号、职位编号、姓名、按部门编号降序 工资升序</h4><pre><code class="sql">select e.employee_id 员工编号, e.job_id 职位编号,e.department_id 部门编号, e.last_name 姓名,e.salary 工资
+from myemployees.employees e 
+ORDER BY e.department_id desc ,salary ASC;</code></pre>
+<h4 id="作业3：查询员工表中job-id-包含a和e的-并且a在e的前面"><a href="#作业3：查询员工表中job-id-包含a和e的-并且a在e的前面" class="headerlink" title="作业3：查询员工表中job_id 包含a和e的 并且a在e的前面"></a>作业3：查询员工表中job_id 包含a和e的 并且a在e的前面</h4><pre><code class="sql">
+SELECT e.job_id
+from myemployees.employees e
+WHERE e.job_id LIKE &#39;%a%e%&#39;;</code></pre>
+<h4 id="作业4：已知表student-里面有-id-学号、-name-、gradeId年级编号"><a href="#作业4：已知表student-里面有-id-学号、-name-、gradeId年级编号" class="headerlink" title="作业4：已知表student 里面有 id 学号、 name 、gradeId年级编号"></a>作业4：已知表student 里面有 id 学号、 name 、gradeId年级编号</h4><p>#已知表grade 里面有年级编号 id  name 年级名<br>#已知表result 里面有id score studentNo 学号 要求查询 姓名、 年级名 、成绩</p>
+<pre><code class="sql&#39;">SELECT  s.name 姓名, g.name 年级名 ,r.score 成绩
+from student s , grade g,restult r
+WHERE s.id = r.id and s.gradeId = g.id</code></pre>
+<h4 id="作业5-显示当前日期，以及去前后空格-截取子字串的函数"><a href="#作业5-显示当前日期，以及去前后空格-截取子字串的函数" class="headerlink" title="作业5:显示当前日期，以及去前后空格  截取子字串的函数"></a>作业5:显示当前日期，以及去前后空格  截取子字串的函数</h4><pre><code class="sql">select  NOW();
+select TRIM(&#39;  你好  &#39;);
+SELECT SUBSTR(&#39;helloworld&#39;,3);
+SELECT SUBSTR(&#39;helloworld&#39;,1,5);</code></pre>
+<h3 id="作业2"><a href="#作业2" class="headerlink" title="作业2"></a>作业2</h3><h4 id="作业1：显示所有员工的姓名、部门号和部门名称"><a href="#作业1：显示所有员工的姓名、部门号和部门名称" class="headerlink" title="作业1：显示所有员工的姓名、部门号和部门名称"></a>作业1：显示所有员工的姓名、部门号和部门名称</h4><pre><code class="sql">
+SELECT e.last_name 员工姓名 , e.department_id 部门号 ,d.department_name 部门名称
+from myemployees.employees e,myemployees.departments d
+WHERE e.department_id = d.department_id;</code></pre>
+<h4 id="作业2：查询90号部门员工的job-id-和90号部门的location-id"><a href="#作业2：查询90号部门员工的job-id-和90号部门的location-id" class="headerlink" title="作业2：查询90号部门员工的job_id 和90号部门的location_id"></a>作业2：查询90号部门员工的job_id 和90号部门的location_id</h4><pre><code class="sql">SELECT e.job_id 工号, l.location_id 位置编号
+from myemployees.employees e,myemployees.locations l ,myemployees.departments d
+WHERE d.department_id=90 and e.department_id = d.department_id and d.location_id = l.location_id;</code></pre>
+<h4 id="作业三：查询所有有奖金的员工的last-name-department-name-location-id-city"><a href="#作业三：查询所有有奖金的员工的last-name-department-name-location-id-city" class="headerlink" title="作业三：查询所有有奖金的员工的last_name department_name location_id city"></a>作业三：查询所有有奖金的员工的last_name department_name location_id city</h4><pre><code class="sql">
+SELECT e.last_name ,d.department_name,l.city
+from myemployees.employees e,myemployees.locations l,myemployees.departments d
+WHERE e.commission_pct is not null and  e.department_id = d.department_id and d.location_id =l.location_id;</code></pre>
+<h4 id="作业四：选择city-在Toronto-工作的员工的last-name-job-id-department-id-department-name"><a href="#作业四：选择city-在Toronto-工作的员工的last-name-job-id-department-id-department-name" class="headerlink" title="作业四：选择city 在Toronto 工作的员工的last_name job_id  department_id  department_name"></a>作业四：选择city 在Toronto 工作的员工的last_name job_id  department_id  department_name</h4><pre><code class="sql">
+SELECT e.last_name , e.job_id ,d.department_name,l.city
+from myemployees.employees e,myemployees.departments d ,myemployees.locations l
+WHERE e.department_id = d.department_id and d.location_id = l.location_id and l.city = &#39;Toronto&#39;;</code></pre>
+<h4 id="作业五：查询每个工种、每个部门的部门名、工种名、和最低工资"><a href="#作业五：查询每个工种、每个部门的部门名、工种名、和最低工资" class="headerlink" title="作业五：查询每个工种、每个部门的部门名、工种名、和最低工资"></a>作业五：查询每个工种、每个部门的部门名、工种名、和最低工资</h4><pre><code class="sql">SELECT e.department_id ,d.department_name ,j.job_title ,MIN(e.salary)
+from myemployees.employees e,myemployees.departments d,myemployees.jobs j
+WHERE e.department_id = d.department_id and e.job_id = j.job_id
+GROUP BY e.department_id,j.job_title;</code></pre>
+<h4 id="作业六：查询每个国家的部门个数大于2的国家编号"><a href="#作业六：查询每个国家的部门个数大于2的国家编号" class="headerlink" title="作业六：查询每个国家的部门个数大于2的国家编号"></a>作业六：查询每个国家的部门个数大于2的国家编号</h4><pre><code class="sql">select  COUNT(*) 部门个数 ,l.country_id 国家编号 
+from myemployees.departments d, myemployees.locations l
+WHERE d.location_id = l.location_id  GROUP BY l.country_id HAVING count(*)&gt;2;</code></pre>
+<h4 id="作业七：选择指定的员工姓名、员工号以及它的管理者的姓名和员工号"><a href="#作业七：选择指定的员工姓名、员工号以及它的管理者的姓名和员工号" class="headerlink" title="作业七：选择指定的员工姓名、员工号以及它的管理者的姓名和员工号"></a>作业七：选择指定的员工姓名、员工号以及它的管理者的姓名和员工号</h4><pre><code class="sql">SELECT e.last_name 员工姓名 ,e.employee_id 员工号,em.last_name 管理者姓名,em.employee_id 管理者工号
+from myemployees.employees e,myemployees.employees em
+WHERE e.manager_id = em.manager_id and e.manager_id is not null;</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -677,12 +727,12 @@ from
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见其它函数</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-连接查询</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-07-24, 15:40:53</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-24, 16:04:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%85%B6%E5%AE%83%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见其它函数">http://yoursite.com/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E5%85%B6%E5%AE%83%E5%87%BD%E6%95%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-11, 22:04:59</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-11, 22:46:47</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" title="MySQL基础-DQL-连接查询">http://yoursite.com/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础_MySQL常见命令 | bofan&#39;s blog</title>
-  <meta name="keywords" content=" xxx ">
-  <meta name="description" content="MySQL基础_MySQL常见命令 | bofan&#39;s blog">
+  <title>MySQL基础-DQL-sql99语法总结 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 数据库 , mysql ">
+  <meta name="description" content="MySQL基础-DQL-sql99语法总结 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -493,25 +493,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-MySQL常见命令-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-sql99语法总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础_MySQL常见命令</h1>
+        <h1 class="article-title">MySQL基础-DQL-sql99语法总结</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a class="color4">xxx</a>
+            <a class="color4">数据库</a>
+            
+            <a class="color1">mysql</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-06-03 20:04:48'>2020-06-03 20:04</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-11 23:00:27'>2020-08-11 22:06</time>
         
     </div>
     <div class="article-meta">
@@ -533,7 +541,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sql99语法总结："><span class="toc-text">sql99语法总结：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-内连接"><span class="toc-text">1.内连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类："><span class="toc-text">分类：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-外连接"><span class="toc-text">2.外连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法：-1"><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点：-1"><span class="toc-text">特点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-交叉连接"><span class="toc-text">3.交叉连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法：-2"><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点：-2"><span class="toc-text">特点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-子查询"><span class="toc-text">4.子查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#含义："><span class="toc-text">含义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类：-1"><span class="toc-text">分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例："><span class="toc-text">示例：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-标量子查询"><span class="toc-text">1.标量子查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-列子查询"><span class="toc-text">2.列子查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-分页查询"><span class="toc-text">5.分页查询</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -549,7 +557,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="sql99语法总结："><a href="#sql99语法总结：" class="headerlink" title="sql99语法总结："></a>sql99语法总结：</h1><h2 id="1-内连接"><a href="#1-内连接" class="headerlink" title="1.内连接"></a>1.内连接</h2><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><hr>
+<p>SELECT 查询列表<br>from 表1<br>INNER JOIN 表2<br>on  连接条件<br>where 筛选条件<br>group BY 分组条件<br>having 分组后筛选<br>order BY 排序列表<br>LIMIT 分页条件;</p>
+<hr>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><hr>
+<p>表的顺序可以调换<br>内连接的结果 = 多表的交集<br>n个表连接 至少需要n-1个连接条件</p>
+<hr>
+<h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><p>等值连接<br>非等值连接<br>自连接</p>
+<h2 id="2-外连接"><a href="#2-外连接" class="headerlink" title="2.外连接"></a>2.外连接</h2><h3 id="语法：-1"><a href="#语法：-1" class="headerlink" title="语法："></a>语法：</h3><p>SELECT 查询列表<br>from 表1<br>left|right|full OUTER JOIN 表2<br>on  连接条件<br>where 筛选条件<br>group BY 分组条件<br>having 分组后筛选<br>order BY 排序列表<br>LIMIT 分页条件;</p>
+<h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3><p>查询的结果 = 主表中所有的行，其中从表和它匹配的将显示行 如果从表没有匹配的则显示null<br>LEFT OUTER JOIN 左边为主表  LEFT OUTER JOIN 右边为主表 full  join 两边都为主表 (mysql 不支持)<br>一般用于查询除交集部分剩余的不匹配行</p>
+<h2 id="3-交叉连接"><a href="#3-交叉连接" class="headerlink" title="3.交叉连接"></a>3.交叉连接</h2><h3 id="语法：-2"><a href="#语法：-2" class="headerlink" title="语法："></a>语法：</h3><p>SELECT 查询列表<br>from 表1<br>CROSS JOIN 表2<br>where 筛选条件<br>group BY 分组条件<br>having 分组后筛选<br>order BY 排序列表<br>LIMIT 分页条件;</p>
+<h3 id="特点：-2"><a href="#特点：-2" class="headerlink" title="特点："></a>特点：</h3><p>类似于笛卡尔乘积</p>
+<h2 id="4-子查询"><a href="#4-子查询" class="headerlink" title="4.子查询"></a>4.子查询</h2><h3 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h3><p>嵌套在其它内部的select语句成为子查询或内查询<br>外部的语句可以为：insert update delete select 等 一般select语句作为外部语句较多<br>外部语句为select一般称为  主查询 或 外查询</p>
+<h3 id="分类：-1"><a href="#分类：-1" class="headerlink" title="分类："></a>分类：</h3><p>按位置分类：select 后面<br>                                    仅仅支持标量子查询<br>                        from  后面<br>                                    表子查询<br>                        where |having 后面<br>                                    标量子查询<br>                                    列子查询<br>                                    行子查询<br>                        exits 后面<br>                                    标量子查询<br>                                    列子查询<br>                                    行子查询<br>                                    表子查询<br>按结果集分类：<br>                        标量子查询 (单行子查询) 结果为一行一列<br>                        列子子查询  （多行子查询） 结果为一列多行<br>                        行子查询  结果集为多行多列<br>                        表子查询  结果集为多行多列 </p>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p>where或having后面</p>
+<h4 id="1-标量子查询"><a href="#1-标量子查询" class="headerlink" title="1.标量子查询"></a>1.标量子查询</h4><p>案例：查询最低工资的员工姓名和工资</p>
+<pre><code class="sql">SELECT e.last_name,e.salary
+from employees e
+WHERE e.salary =(
+SELECT min(salary)
+from employees
+);</code></pre>
+<h4 id="2-列子查询"><a href="#2-列子查询" class="headerlink" title="2.列子查询"></a>2.列子查询</h4><p>案例：查询所有事领导的员工姓名</p>
+<pre><code class="sql">SELECT e.last_name
+FROM employees e
+WHERE e.employee_id = any(
+SELECT manager_id
+from employees
+WHERE manager_id is not null
+);
+SELECT *from employees;</code></pre>
+<h2 id="5-分页查询"><a href="#5-分页查询" class="headerlink" title="5.分页查询"></a>5.分页查询</h2><p>SELECT 查询列表<br>from 表<br>limit offset ,size;</p>
+<p><font color="red">注意 起始位置为 0 与 SUBSTR(str FROM pos FOR len) 从1开始区分</font> </p>
+<p>公式：假如要显示的页数为page  每一页条目数为size<br>SELECT 查询列表<br>from 表<br>limit (page -1)size ,size;</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
     </div>
@@ -562,12 +603,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础_MySQL常见命令</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-sql99语法总结</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-06-03, 20:04:48</p>
-    <p><span class="copy-title">最后更新:</span>2020-06-03, 20:04:48</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-MySQL%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1/" title="MySQL基础_MySQL常见命令">http://yoursite.com/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-MySQL%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-11, 22:06:56</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-11, 23:00:27</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-sql99%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" title="MySQL基础-DQL-sql99语法总结">http://yoursite.com/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-sql99%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

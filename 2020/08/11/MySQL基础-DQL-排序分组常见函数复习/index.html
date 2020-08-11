@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础_MySQL常见命令 | bofan&#39;s blog</title>
-  <meta name="keywords" content=" xxx ">
-  <meta name="description" content="MySQL基础_MySQL常见命令 | bofan&#39;s blog">
+  <title>MySQL基础-DQL-排序分组常见函数复习 | bofan&#39;s blog</title>
+  <meta name="keywords" content=" 数据库 , mysql ">
+  <meta name="description" content="MySQL基础-DQL-排序分组常见函数复习 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -493,25 +493,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-MySQL常见命令-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-排序分组常见函数复习" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础_MySQL常见命令</h1>
+        <h1 class="article-title">MySQL基础-DQL-排序分组常见函数复习</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a class="color4">xxx</a>
+            <a class="color4">数据库</a>
+            
+            <a class="color1">mysql</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-06-03 20:04:48'>2020-06-03 20:04</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-11 22:44:44'>2020-08-11 22:05</time>
         
     </div>
     <div class="article-meta">
@@ -533,7 +541,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：排序查询"><span class="toc-text">一：排序查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：常见函数"><span class="toc-text">二：常见函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单行函数"><span class="toc-text">单行函数:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-字符函数"><span class="toc-text">1.字符函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-数学函数"><span class="toc-text">2.数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-日期函数"><span class="toc-text">3.日期函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-其它函数"><span class="toc-text">4.其它函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-流程控制函数"><span class="toc-text">5.流程控制函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组函数："><span class="toc-text">分组函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-分类："><span class="toc-text">1.分类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-特点："><span class="toc-text">2.特点：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组查询"><span class="toc-text">分组查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法：-1"><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点：-1"><span class="toc-text">特点：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#分组前筛选："><span class="toc-text">分组前筛选：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分组后筛选："><span class="toc-text">分组后筛选：</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -549,7 +557,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一：排序查询"><a href="#一：排序查询" class="headerlink" title="一：排序查询"></a>一：排序查询</h2><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><p>SELECT 查询列表<br>from 表<br>where 筛选条件<br>order by 排序列表【asc desc 】</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><p>1.asc升序 desc降序 默认升序</p>
+<p>2.排序列表支持 单个字段 、 多个字段、函数、表达式 、别名</p>
+<p>3.ORDER BY 一般放在查询语句的最后 除limit之外</p>
+<h2 id="二：常见函数"><a href="#二：常见函数" class="headerlink" title="二：常见函数"></a>二：常见函数</h2><p>功能：类似于语言的函数<br>好处：提高重用性和隐藏细节<br>调用：select 函数名 （实参列表）</p>
+<h3 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数:"></a>单行函数:</h3><h4 id="1-字符函数"><a href="#1-字符函数" class="headerlink" title="1.字符函数"></a>1.字符函数</h4><p>concat 连接<br>substr 截取字串<br>upper  变大写<br>lower  变小写<br>replace 替换<br>length  获取长度<br>lpad    左填充<br>rpad    右填充<br>instr   获取字串第一次出现的索引</p>
+<h4 id="2-数学函数"><a href="#2-数学函数" class="headerlink" title="2.数学函数"></a>2.数学函数</h4><p>ceil  向上取整<br>round 四舍五入<br>mod   取模<br>floor 向下取整<br>truncate 截断<br>rand  获取随即数，默认返回0-1之间的小数</p>
+<h4 id="3-日期函数"><a href="#3-日期函数" class="headerlink" title="3.日期函数"></a>3.日期函数</h4><p>NOW()  获取当前日期时间<br>year 返回年<br>month 返回月份<br>day<br>HOUR<br>minute<br>second<br>date_fromat 将日期转换为字符<br>curdate 返回当前日期<br>str_to_date  将字符转换为日期<br>curtime  返回当前时间<br>datediff 返回两个日期相差的天数<br>monthname  英文形式返回月</p>
+<h4 id="4-其它函数"><a href="#4-其它函数" class="headerlink" title="4.其它函数"></a>4.其它函数</h4><p>version 当前数据库的版本号<br>database 当前数据库<br>user    当前用户<br>password（’字符’） 返回该字符的密码形式<br>MD5    返回该字符的MD5的加密形式<br>SELECT MD5(‘你好’);</p>
+<h4 id="5-流程控制函数"><a href="#5-流程控制函数" class="headerlink" title="5.流程控制函数"></a>5.流程控制函数</h4><p>if(条件表达式，表达式1，表达式2)：条件表达式成立返回表达式1 否则返回表达式2<br>case情况1<br>case 变量或表达式或字段<br>when 常量 then 值1<br>when 常量 then 值2<br>…<br>ELSE 值 n<br>end</p>
+<p>case情况2<br>case<br>when 条件1 then 值1<br>when 条件2 then 值2<br>…<br>ELSE 值 n<br>end</p>
+<h3 id="分组函数："><a href="#分组函数：" class="headerlink" title="分组函数："></a>分组函数：</h3><h4 id="1-分类："><a href="#1-分类：" class="headerlink" title="1.分类："></a>1.分类：</h4><p>max 最大值<br>min  最小值<br>sum  求和<br>avg  平均值<br>count 计数</p>
+<h4 id="2-特点："><a href="#2-特点：" class="headerlink" title="2.特点："></a>2.特点：</h4><p>语法：<br>select  max（字段） from 表名;</p>
+<p>支持的类型：<br>sum 和 avg一般用于处理数值型<br>max 、min 、count  可以处理任何数据类型</p>
+<p>以上分组函数都自动忽略null值<br>都可以搭配distinct 使用 达到去重的效果<br>select  sum(DISTINCT 字段) from 表;</p>
+<p>count函数：<br>count(字段) 统计字段的非空值个数<br>count(<em>):统计结果集的行数<br>案例：查询每个部门的员工个数<br>SELECT count(</em>),e.department_id<br>from myemployees.employees e<br>GROUP BY e.department_id;</p>
+<p>count(1):统计结果集的行数<br>效率上：<br>MyIsAM存储引擎 count（*）效率最高<br>InnodB存储引擎 两者差不多 &gt;count（字段）</p>
+<p>和分组函数一同查询的字段要求是group by 后面出现的字段</p>
+<h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><h3 id="语法：-1"><a href="#语法：-1" class="headerlink" title="语法："></a>语法：</h3><p>select  分组函数，分组后的字段<br>from 表名<br>where 筛选条件<br>group by 分组字段<br>【having 分组后的筛选】<br>【order by 排序列表】</p>
+<h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3><h5 id="分组前筛选："><a href="#分组前筛选：" class="headerlink" title="分组前筛选："></a>分组前筛选：</h5><p>select  分组函数，分组后的字段<br>from 表名<br>where 筛选条件<br>group by 分组字段<br>【order by 排序列表】</p>
+<h5 id="分组后筛选："><a href="#分组后筛选：" class="headerlink" title="分组后筛选："></a>分组后筛选：</h5><p>select  分组函数，分组后的字段<br>from 表名<br>group by 分组字段<br>【having 分组后的筛选】<br>【order by 排序列表】</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
     </div>
@@ -562,12 +591,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础_MySQL常见命令</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-排序分组常见函数复习</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-06-03, 20:04:48</p>
-    <p><span class="copy-title">最后更新:</span>2020-06-03, 20:04:48</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-MySQL%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1/" title="MySQL基础_MySQL常见命令">http://yoursite.com/2020/06/03/MySQL%E5%9F%BA%E7%A1%80-MySQL%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-11, 22:05:49</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-11, 22:44:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E6%8E%92%E5%BA%8F%E5%88%86%E7%BB%84%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0%E5%A4%8D%E4%B9%A0/" title="MySQL基础-DQL-排序分组常见函数复习">http://yoursite.com/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E6%8E%92%E5%BA%8F%E5%88%86%E7%BB%84%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0%E5%A4%8D%E4%B9%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
