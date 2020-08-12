@@ -543,7 +543,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-08-12 22:41:05'>2020-08-12 22:13</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-12 22:49:14'>2020-08-12 22:13</time>
         
     </div>
     <div class="article-meta">
@@ -583,15 +583,34 @@
       
         <h2 id="DML语言简介"><a href="#DML语言简介" class="headerlink" title="DML语言简介"></a>DML语言简介</h2><p>数据操纵语言<br>插入：insert<br>修改：update<br>删除：delete</p>
 <h2 id="一：插入语句"><a href="#一：插入语句" class="headerlink" title="一：插入语句"></a>一：插入语句</h2><h3 id="方式一：经典插入"><a href="#方式一：经典插入" class="headerlink" title="方式一：经典插入"></a>方式一：经典插入</h3><p>语法：<br>insert into 表名（字段名…） VALUES(字段值1,字段值2,….)</p>
-<p>1.插入的值的类型要与列的类型一致 或 兼容<br>insert into girls.beauty(id,name,sex,borndate,phone,photo,boyfriend_id)<br>VALUES(13,’唐艺昕’,’女’,’1990-4-23’,’18988888888’,null,2);<br>SELECT *from girls.beauty;</p>
-<p>2.不为null的列必须插入值。可以为null的列如何插入值？<br>方式一：<br>insert into girls.beauty(id,name,sex,borndate,phone,photo,boyfriend_id)<br>VALUES(13,’唐艺昕’,’女’,’1990-4-23’,’18988888888’,null,2);</p>
-<p>方式二：<br>insert into girls.beauty(id,name,sex,borndate,phone,photo,boyfriend_id)<br>VALUES(14,’金星’,’女’,’1990-4-23’,’13888888888’,null,2);</p>
-<p>insert into girls.beauty(id,name,sex,phone)<br>VALUES(15,’娜扎’,’女’,’13888888888’);</p>
-<p>3.顺序可以调换<br>insert into girls.beauty(name,sex,id,phone)<br>VALUES(‘蒋欣’,’女’,16,’15588888888’);</p>
-<p>4.列数和值的个数必须一致<br>insert into girls.beauty(name,sex,id,phone,boyfriend_id)<br>VALUES(‘关晓彤’,’女’,17,’110’);</p>
-<p>5.可以省略列名，默认所有列 ，而且列的顺序和表中列的顺序一致<br>insert into girls.beauty<br>VALUES(18,’张飞’,’男’,null,’119’,null,null);</p>
+<p>1.插入的值的类型要与列的类型一致 或 兼容</p>
+<pre><code class="sql">insert into girls.beauty(id,name,sex,borndate,phone,photo,boyfriend_id) 
+VALUES(13,&#39;唐艺昕&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;18988888888&#39;,null,2);
+SELECT *from girls.beauty;
+
+</code></pre>
+<p>2.不为null的列必须插入值。可以为null的列如何插入值？<br>方式一：</p>
+<pre><code class="sql">insert into girls.beauty(id,name,sex,borndate,phone,photo,boyfriend_id) 
+VALUES(13,&#39;唐艺昕&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;18988888888&#39;,null,2);</code></pre>
+<p>方式二：</p>
+<pre><code class="sql">insert into girls.beauty(id,name,sex,borndate,phone,photo,boyfriend_id) 
+VALUES(14,&#39;金星&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;13888888888&#39;,null,2);
+
+
+insert into girls.beauty(id,name,sex,phone) 
+VALUES(15,&#39;娜扎&#39;,&#39;女&#39;,&#39;13888888888&#39;);</code></pre>
+<p>3.顺序可以调换</p>
+<pre><code class="sql">insert into girls.beauty(name,sex,id,phone) 
+VALUES(&#39;蒋欣&#39;,&#39;女&#39;,16,&#39;15588888888&#39;);</code></pre>
+<p>4.列数和值的个数必须一致</p>
+<pre><code class="sql">insert into girls.beauty(name,sex,id,phone,boyfriend_id) 
+VALUES(&#39;关晓彤&#39;,&#39;女&#39;,17,&#39;110&#39;);</code></pre>
+<p>5.可以省略列名，默认所有列 ，而且列的顺序和表中列的顺序一致</p>
+<pre><code class="sql">insert into girls.beauty
+VALUES(18,&#39;张飞&#39;,&#39;男&#39;,null,&#39;119&#39;,null,null);</code></pre>
 <h3 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h3><p>语法：<br>insert into 表名<br>set 列名= 值 ，列名 = 值，…</p>
-<p>INSERT girls.beauty<br>set id = 19,name = ‘刘涛’,phone = ‘999’ ;</p>
+<pre><code class="sql">INSERT girls.beauty
+set id = 19,name = &#39;刘涛&#39;,phone = &#39;999&#39; ;</code></pre>
 <h3 id="两种插入方式比较"><a href="#两种插入方式比较" class="headerlink" title="两种插入方式比较"></a>两种插入方式比较</h3><p>1.方式一支持插入多行</p>
 <pre><code class="sql">insert into girls.beauty
 VALUES(23,&#39;唐艺昕1&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;18988888888&#39;,null,2),
@@ -624,7 +643,7 @@ SELECT *from girls.beauty;</code></pre>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
     <p><span class="copy-title">发布时间:</span>2020-08-12, 22:13:10</p>
-    <p><span class="copy-title">最后更新:</span>2020-08-12, 22:41:05</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-12, 22:49:14</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DML-DML%E8%AF%AD%E8%A8%80/" title="MySQL基础-DML-DML语言">http://yoursite.com/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DML-DML%E8%AF%AD%E8%A8%80/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
