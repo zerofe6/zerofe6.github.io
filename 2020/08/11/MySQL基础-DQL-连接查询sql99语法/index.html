@@ -205,7 +205,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(22)</small></div></li>
+    <li><div class="all active">全部文章<small>(25)</small></div></li>
     
         
             
@@ -217,7 +217,7 @@
     
         
             
-            <li><div data-rel="数据库">数据库<small>(15)</small></div>
+            <li><div data-rel="数据库">数据库<small>(17)</small></div>
                 
             </li>
             
@@ -233,7 +233,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="22">
+<input type="hidden" id="yelog_site_posts_number" value="25">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -481,6 +481,30 @@
             <span class="post-date" title="2020-08-11 22:06:18">2020/08/11</span>
         </a>
         
+        <a  class=""
+           href="/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DML-DML%E8%AF%AD%E8%A8%80/"
+           data-tag="xxx"
+           data-author="" >
+            <span class="post-title" title="MySQL基础-DML-DML语言">MySQL基础-DML-DML语言</span>
+            <span class="post-date" title="2020-08-12 22:13:10">2020/08/12</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%AD%90%E6%9F%A5%E8%AF%A2%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/"
+           data-tag="数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="MySQL基础-DQL-子查询经典案例">MySQL基础-DQL-子查询经典案例</span>
+            <span class="post-date" title="2020-08-12 22:09:11">2020/08/12</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/"
+           data-tag="数据库,mysql"
+           data-author="" >
+            <span class="post-title" title="MySQL基础-DQL-联合查询">MySQL基础-DQL-联合查询</span>
+            <span class="post-date" title="2020-08-12 22:12:32">2020/08/12</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -519,7 +543,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-08-11 22:46:44'>2020-08-11 22:06</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-12 22:32:38'>2020-08-11 22:06</time>
         
     </div>
     <div class="article-meta">
@@ -541,7 +565,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sql99语法"><span class="toc-text">sql99语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一：内连接"><span class="toc-text">一：内连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-等值连接"><span class="toc-text">1.等值连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-非等值连接"><span class="toc-text">2.非等值连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-自连接"><span class="toc-text">3.自连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：外连接："><span class="toc-text">二：外连接：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#左外连接"><span class="toc-text">左外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#右外连接"><span class="toc-text">右外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全外连接-mysql-不支持全外连接"><span class="toc-text">全外连接 mysql 不支持全外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交叉连接-笛卡尔乘积"><span class="toc-text">交叉连接 笛卡尔乘积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-92-和sql99"><span class="toc-text">sql 92 和sql99</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -557,7 +581,116 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="sql99语法"><a href="#sql99语法" class="headerlink" title="sql99语法"></a>sql99语法</h2><p>语法：</p>
+<pre><code>    SELECT 查询列表
+    from 表1 别名 【连接类型】
+    join 表2 别名
+    on  连接条件
+    【where 筛选条件】
+    【group  by 分组条件】
+    【having 筛选条件】
+    【order by 排序条件】</code></pre><p>分类：<br>内连接（重点）：inner<br>外连接<br>            左外连接（重点）：left 【outer】<br>            右外连接 :right 【outer】<br>            全外连接 :full 【outer】<br>交叉连接：cross</p>
+<h2 id="一：内连接"><a href="#一：内连接" class="headerlink" title="一：内连接"></a>一：内连接</h2><p>SELECT 查询列表<br>from  表1 别名<br>INNER JOIN 表2 别名<br>on 连接条件</p>
+<p>分类：等值连接 非等值连接 、自连接</p>
+<p>特点：<br>添加排序、分组、筛选<br>inner 可以省略<br>筛选条件放在where 后面，连接条件放在where 后面，提高分离性 ，便于阅读<br>等值连接inner join 和sql92的等值连接效果是一样的，都是查询多表的交集部分</p>
+<h3 id="1-等值连接"><a href="#1-等值连接" class="headerlink" title="1.等值连接"></a>1.等值连接</h3><p>#案例1：查询员工名部门名</p>
+<pre><code class="sql">select  e.last_name 员工名, d.department_name 部门名
+from  myemployees.employees e 
+inner join myemployees.departments d
+on e.department_id = d.department_id;</code></pre>
+<p>#案例2：查询名字中包含e的员工名和工种名</p>
+<pre><code class="sql">SELECT e.last_name 员工名, j.job_title 工种名
+from myemployees.employees e
+inner JOIN myemployees.jobs j
+on e.job_id = j.job_id
+WHERE e.last_name LIKE &#39;%e%&#39;;</code></pre>
+<p>#案例3：查询部门个数大于3的城市名和部门个数</p>
+<pre><code class="sql">SELECT count(*) 部门个数 ,l.city 城市名
+from myemployees.locations l
+INNER JOIN myemployees.departments d
+on d.location_id = l.location_id
+GROUP BY l.city
+HAVING COUNT(*) &gt;3
+order BY COUNT(*) desc;</code></pre>
+<p>#案例4：查询部门员工个数&gt;3的部门名和员工个数  并按个数降序 </p>
+<pre><code class="sql">SELECT count(*) 部门员工个数 , d.department_name 部门名
+from myemployees.employees e
+INNER JOIN myemployees.departments d
+on e.department_id = d.department_id
+GROUP BY d.department_name
+HAVING count(*)&gt;3
+ORDER BY COUNT(*) desc;</code></pre>
+<p>#案例5：查询员工名、部门名、工种名并按部门降序 (添加3表连接)</p>
+<pre><code class="sql">select  e.last_name 员工名,d.department_name 部门名,j.job_title 工种名
+from myemployees.employees e
+INNER JOIN myemployees.departments d 
+on e.department_id = d.department_id 
+INNER JOIN myemployees.jobs j
+on e.job_id = j.job_id
+ORDER BY d.department_name desc;</code></pre>
+<h3 id="2-非等值连接"><a href="#2-非等值连接" class="headerlink" title="2.非等值连接"></a>2.非等值连接</h3><p>#查询员工的工资级别</p>
+<pre><code class="sql">SELECT  e.salary 工资, g.grade_level 工资等级
+from myemployees.employees e
+INNER JOIN girls.job_grades g
+on e.salary BETWEEN g.lowest_sal and g.highest_sal;</code></pre>
+<p>#查询每个工资级别的个数&gt;3，并且按工资级别降序</p>
+<pre><code class="sql">SELECT COUNT(*) 工资级别个数,e.salary,g.grade_level 工资级别
+FROM myemployees.employees e
+INNER JOIN girls.job_grades g 
+on e.salary BETWEEN g.lowest_sal and g.highest_sal
+GROUP BY g.grade_level
+HAVING COUNT(*)&gt;3
+ORDER BY g.grade_level DESC;</code></pre>
+<h3 id="3-自连接"><a href="#3-自连接" class="headerlink" title="3.自连接"></a>3.自连接</h3><p>#查询员工的名字包含字符k、上级的名字</p>
+<pre><code class="sql">
+
+SELECT e.employee_id 员工编号, e.last_name 员工的姓名 , em.employee_id 上级编号, em.last_name 上级姓名
+from myemployees.employees e
+INNER JOIN myemployees.employees em
+on e.manager_id = em.employee_id
+WHERE e.manager_id is not null and  e.last_name LIKE &#39;%k%&#39;;</code></pre>
+<h2 id="二：外连接："><a href="#二：外连接：" class="headerlink" title="二：外连接："></a>二：外连接：</h2><p>外连接用于查询一个表中有另一个表没有的记录 </p>
+<p>特点</p>
+<ol>
+<li><p>外连接中的查询结果为主表中的所有记录</p>
+<pre><code>  如果从表中有和它匹配的 则显示匹配的值
+  如果从表中没有和它匹配的 则显示null </code></pre><p>外连接的查询结果 = 内连接+主表中有而从表中没有的记录</p>
+</li>
+<li><p>左外连接 left join 左边的为主表 </p>
+<pre><code> 右外连接 right join 右边的是主表</code></pre></li>
+<li><p>左外连接和右外连接 交换两个表的顺序可以实现相同的结果</p>
+</li>
+<li><p>全外连接相当于 内连接的结果 + 表1中有表2中没有 + 表1中没有表2中有的</p>
+</li>
+</ol>
+<p>#引入：查询没有男朋友的女生</p>
+<h3 id="左外连接"><a href="#左外连接" class="headerlink" title="左外连接"></a>左外连接</h3><pre><code class="sql">SELECT  be.id 女生编号 ,be.`name` 女生名字 , b.boyName 男生名,b.id 男生编号
+from girls.beauty be
+left outer join girls.boys  b
+on b.id = be.boyfriend_id
+WHERE b.id  is null;</code></pre>
+<h3 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h3><pre><code class="sql">SELECT  be.id 女生编号 ,be.`name` 女生名字 , b.boyName 男生名,b.id 男生编号
+from girls.boys  b
+right outer join girls.beauty be
+on b.id = be.boyfriend_id
+WHERE b.id  is null;</code></pre>
+<p>#案例1：查询哪个部门没有员工</p>
+<pre><code class="sql">SELECT d.department_id 部门编号 , d.department_name 部门名称 , e.department_id 员工表部门编号
+from  myemployees.employees e
+RIGHT OUTER JOIN myemployees.departments  d
+on d.department_id = e.department_id
+WHERE e.department_id is null;
+
+</code></pre>
+<h3 id="全外连接-mysql-不支持全外连接"><a href="#全外连接-mysql-不支持全外连接" class="headerlink" title="全外连接 mysql 不支持全外连接"></a>全外连接 mysql 不支持全外连接</h3><pre><code class="sql">SELECT b.* ,bo.*
+from girls.beauty be  
+full outer  join  girls.boys b
+on be.boyfriend_id = b.id</code></pre>
+<h3 id="交叉连接-笛卡尔乘积"><a href="#交叉连接-笛卡尔乘积" class="headerlink" title="交叉连接 笛卡尔乘积"></a>交叉连接 笛卡尔乘积</h3><pre><code class="sql">SELECT be.* ,b.*
+from girls.beauty be
+CROSS join girls.boys b;</code></pre>
+<h3 id="sql-92-和sql99"><a href="#sql-92-和sql99" class="headerlink" title="sql 92 和sql99"></a>sql 92 和sql99</h3><p>sql99 支持性更好<br>可读性：sql99 实现连接条件和筛选条件的分离 可读性较高</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
     </div>
@@ -574,7 +707,7 @@
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
     <p><span class="copy-title">发布时间:</span>2020-08-11, 22:06:18</p>
-    <p><span class="copy-title">最后更新:</span>2020-08-11, 22:46:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-12, 22:32:38</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2sql99%E8%AF%AD%E6%B3%95/" title="MySQL基础-DQL-连接查询sql99语法">http://yoursite.com/2020/08/11/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2sql99%E8%AF%AD%E6%B3%95/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

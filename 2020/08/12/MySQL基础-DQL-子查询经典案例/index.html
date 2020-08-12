@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础-DQL-常见数学函数 | bofan&#39;s blog</title>
+  <title>MySQL基础-DQL-子查询经典案例 | bofan&#39;s blog</title>
   <meta name="keywords" content=" 数据库 , mysql ">
-  <meta name="description" content="MySQL基础-DQL-常见数学函数 | bofan&#39;s blog">
+  <meta name="description" content="MySQL基础-DQL-子查询经典案例 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -517,9 +517,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-DQL-常见数学函数" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-子查询经典案例" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础-DQL-常见数学函数</h1>
+        <h1 class="article-title">MySQL基础-DQL-子查询经典案例</h1>
     
     <div class="article-meta">
         
@@ -543,7 +543,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-24 15:44:30'>2020-07-24 15:39</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-12 22:18:10'>2020-08-12 22:09</time>
         
     </div>
     <div class="article-meta">
@@ -565,7 +565,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二-数学函数"><span class="toc-text">二 .数学函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-round-四舍五入"><span class="toc-text">1.round  四舍五入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ceil-向上取整-返回大于等于改参数的最小整数"><span class="toc-text">2.ceil 向上取整 返回大于等于改参数的最小整数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-floor-向下取整-返回小于等于该参数的最大整数"><span class="toc-text">3.floor 向下取整 返回小于等于该参数的最大整数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-TRUNCATE-截断"><span class="toc-text">4.TRUNCATE 截断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mod-取余"><span class="toc-text">5.mod  取余</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-查询工资最低的员工信息：last-name-salary"><span class="toc-text">1.查询工资最低的员工信息：last_name  salary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-查询平均工资最低的部门信息"><span class="toc-text">2.查询平均工资最低的部门信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-查询平均工资最低的部门信息和该部门平均工资"><span class="toc-text">3.查询平均工资最低的部门信息和该部门平均工资</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-查询平均工资最高的job信息"><span class="toc-text">4.查询平均工资最高的job信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-查询平均工资高于工资平均工资的部门有哪些"><span class="toc-text">5.查询平均工资高于工资平均工资的部门有哪些</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-查询出公司所有manager的详细信息"><span class="toc-text">6.查询出公司所有manager的详细信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-各个部门中，最高工资最低的那个部门的，最低工资是多少"><span class="toc-text">7.各个部门中，最高工资最低的那个部门的，最低工资是多少</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-查询平均工资最高的部门的manager的详细信息：last-name-department-id-email-salary"><span class="toc-text">8.查询平均工资最高的部门的manager的详细信息：last_name department_id  email salary</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -581,18 +581,125 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="二-数学函数"><a href="#二-数学函数" class="headerlink" title="二 .数学函数"></a>二 .数学函数</h1><h2 id="1-round-四舍五入"><a href="#1-round-四舍五入" class="headerlink" title="1.round  四舍五入"></a>1.round  四舍五入</h2><pre><code class="sql">select ROUND(1.454);
-select round(-1.65);
-SELECT ROUND(1.3548,2);</code></pre>
-<h2 id="2-ceil-向上取整-返回大于等于改参数的最小整数"><a href="#2-ceil-向上取整-返回大于等于改参数的最小整数" class="headerlink" title="2.ceil 向上取整 返回大于等于改参数的最小整数"></a>2.ceil 向上取整 返回大于等于改参数的最小整数</h2><pre><code class="sql">select ceil(1.23);
-SELECT CEIL(-1.99);</code></pre>
-<h2 id="3-floor-向下取整-返回小于等于该参数的最大整数"><a href="#3-floor-向下取整-返回小于等于该参数的最大整数" class="headerlink" title="3.floor 向下取整 返回小于等于该参数的最大整数"></a>3.floor 向下取整 返回小于等于该参数的最大整数</h2><pre><code class="sql">select FLOOR(1.02);</code></pre>
-<h2 id="4-TRUNCATE-截断"><a href="#4-TRUNCATE-截断" class="headerlink" title="4.TRUNCATE 截断"></a>4.TRUNCATE 截断</h2><pre><code class="sql">select TRUNCATE(1.988524,3) as out_put;</code></pre>
-<h2 id="5-mod-取余"><a href="#5-mod-取余" class="headerlink" title="5.mod  取余"></a>5.mod  取余</h2><pre><code class="sql">select MOD(10,3);
-select mod(-10,3);
-select mod(10,-3);
-select  10%3;
-a - a/b*b; </code></pre>
+        <h1 id="1-查询工资最低的员工信息：last-name-salary"><a href="#1-查询工资最低的员工信息：last-name-salary" class="headerlink" title="1.查询工资最低的员工信息：last_name  salary"></a>1.查询工资最低的员工信息：last_name  salary</h1><p>·</p>
+<pre><code class="sql">SELECT last_name ,salary
+from employees
+WHERE salary =(
+SELECT MIN(salary)
+from employees
+);</code></pre>
+<h1 id="2-查询平均工资最低的部门信息"><a href="#2-查询平均工资最低的部门信息" class="headerlink" title="2.查询平均工资最低的部门信息"></a>2.查询平均工资最低的部门信息</h1><pre><code class="sql">SELECT *
+FROM  departments d
+WHERE d.department_id = (
+SELECT department_id
+from employees
+GROUP BY department_id
+having avg(salary) = (
+        SELECT min(t.avg )
+        from  (SELECT avg(salary) avg 
+                        from  employees
+                        GROUP BY department_id
+                        having department_id is not null
+                        ORDER BY avg(salary)
+                    ) t
+)
+);</code></pre>
+<p>#方式2：<font color="red"> 使用分页</font></p>
+<pre><code class="sql">SELECT *
+FROM  departments d
+WHERE d.department_id = (
+                        SELECT department_id
+                        from  employees
+                        GROUP BY department_id
+                        having department_id is not null
+                        ORDER BY avg(salary)
+                        LIMIT 1
+);</code></pre>
+<h1 id="3-查询平均工资最低的部门信息和该部门平均工资"><a href="#3-查询平均工资最低的部门信息和该部门平均工资" class="headerlink" title="3.查询平均工资最低的部门信息和该部门平均工资"></a>3.查询平均工资最低的部门信息和该部门平均工资</h1><pre><code class="sql">SELECT t1.`平均工资`,d.*
+FROM  departments d,(
+SELECT avg(salary) 平均工资
+from employees a
+GROUP BY  a.department_id
+having avg(salary)
+ORDER BY avg(salary) asc
+LIMIT 1
+) t1
+WHERE d.department_id = (
+SELECT department_id
+from employees
+GROUP BY department_id
+having avg(salary) = (
+        SELECT min(t.avg )
+        from  (SELECT avg(salary) avg 
+                        from  employees
+                        GROUP BY department_id
+                        having department_id is not null
+                        ORDER BY avg(salary)
+                    ) t
+)
+);
+
+</code></pre>
+<h1 id="4-查询平均工资最高的job信息"><a href="#4-查询平均工资最高的job信息" class="headerlink" title="4.查询平均工资最高的job信息"></a>4.查询平均工资最高的job信息</h1><pre><code class="sql">SELECT j.*
+from jobs j
+WHERE j.job_id = (
+SELECT e.job_id
+from employees e
+GROUP BY e.job_id
+having AVG(e.salary)
+ORDER BY AVG(e.salary) DESC
+LIMIT 1
+);
+
+SELECT j.*,t.`平均工资`
+from jobs j,(
+            SELECT e.job_id,AVG(e.salary) 平均工资
+            from employees e
+            GROUP BY e.job_id
+            having AVG(e.salary)
+            ORDER BY 平均工资 DESC
+            limit 1
+) t
+WHERE j.job_id = t.job_id ;</code></pre>
+<h1 id="5-查询平均工资高于工资平均工资的部门有哪些"><a href="#5-查询平均工资高于工资平均工资的部门有哪些" class="headerlink" title="5.查询平均工资高于工资平均工资的部门有哪些"></a>5.查询平均工资高于工资平均工资的部门有哪些</h1><pre><code class="sql">SELECT d.*,tt.`部门平均工资`,t.`工资平均工资`
+from (
+SELECT avg(salary)  工资平均工资 
+from employees
+) t ,(
+SELECT avg(e.salary) 部门平均工资 ,e.department_id 部门编号
+from employees e
+GROUP BY e.department_id
+) tt ,departments d
+WHERE tt.`部门平均工资`&gt;t.`工资平均工资` and d.department_id = tt.部门编号 </code></pre>
+<h1 id="6-查询出公司所有manager的详细信息"><a href="#6-查询出公司所有manager的详细信息" class="headerlink" title="6.查询出公司所有manager的详细信息"></a>6.查询出公司所有manager的详细信息</h1><pre><code class="sql">SELECT e.*
+from employees e
+WHERE e.manager_id in (
+SELECT a.employee_id 
+from employees a
+where a.manager_id is not null 
+);</code></pre>
+<h1 id="7-各个部门中，最高工资最低的那个部门的，最低工资是多少"><a href="#7-各个部门中，最高工资最低的那个部门的，最低工资是多少" class="headerlink" title="7.各个部门中，最高工资最低的那个部门的，最低工资是多少"></a>7.各个部门中，最高工资最低的那个部门的，最低工资是多少</h1><pre><code class="sql">SELECT  MAX(e.salary) 部门最高工资 ,e.department_id 部门编号
+from employees e
+GROUP BY e.department_id
+ORDER BY 部门最高工资 DESC
+LIMIT 1;
+
+SELECT t.`部门最高工资`,d.*
+from departments d,(
+        SELECT  MAX(e.salary) 部门最高工资 ,e.department_id 部门编号
+        from employees e
+        GROUP BY e.department_id
+        ORDER BY 部门最高工资 asc
+        LIMIT 1
+) t WHERE d.department_id = t.`部门编号`;</code></pre>
+<h1 id="8-查询平均工资最高的部门的manager的详细信息：last-name-department-id-email-salary"><a href="#8-查询平均工资最高的部门的manager的详细信息：last-name-department-id-email-salary" class="headerlink" title="8.查询平均工资最高的部门的manager的详细信息：last_name department_id  email salary"></a>8.查询平均工资最高的部门的manager的详细信息：last_name department_id  email salary</h1><pre><code class="sql">SELECT a.*,t.`部门平均最高工资`
+from employees a,(
+        SELECT ROUND(avg(e.salary),2) 部门平均最高工资 ,e.department_id 部门编号,e.manager_id 部门领导编号
+        from employees e
+        GROUP BY e.department_id
+        ORDER BY 部门平均最高工资 desc
+        LIMIT 1
+) t WHERE a.department_id = t.`部门编号` and a.employee_id =t.`部门领导编号` ;</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -606,12 +713,12 @@ a - a/b*b; </code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见数学函数</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-子查询经典案例</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-07-24, 15:39:43</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-24, 15:44:30</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见数学函数">http://yoursite.com/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-12, 22:09:11</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-12, 22:18:10</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%AD%90%E6%9F%A5%E8%AF%A2%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/" title="MySQL基础-DQL-子查询经典案例">http://yoursite.com/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%AD%90%E6%9F%A5%E8%AF%A2%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MySQL基础-DQL-常见数学函数 | bofan&#39;s blog</title>
+  <title>MySQL基础-DQL-联合查询 | bofan&#39;s blog</title>
   <meta name="keywords" content=" 数据库 , mysql ">
-  <meta name="description" content="MySQL基础-DQL-常见数学函数 | bofan&#39;s blog">
+  <meta name="description" content="MySQL基础-DQL-联合查询 | bofan&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -517,9 +517,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySQL基础-DQL-常见数学函数" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MySQL基础-DQL-联合查询" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySQL基础-DQL-常见数学函数</h1>
+        <h1 class="article-title">MySQL基础-DQL-联合查询</h1>
     
     <div class="article-meta">
         
@@ -543,7 +543,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-24 15:44:30'>2020-07-24 15:39</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-12 22:20:47'>2020-08-12 22:12</time>
         
     </div>
     <div class="article-meta">
@@ -565,7 +565,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二-数学函数"><span class="toc-text">二 .数学函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-round-四舍五入"><span class="toc-text">1.round  四舍五入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ceil-向上取整-返回大于等于改参数的最小整数"><span class="toc-text">2.ceil 向上取整 返回大于等于改参数的最小整数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-floor-向下取整-返回小于等于该参数的最大整数"><span class="toc-text">3.floor 向下取整 返回小于等于该参数的最大整数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-TRUNCATE-截断"><span class="toc-text">4.TRUNCATE 截断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mod-取余"><span class="toc-text">5.mod  取余</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#联合查询"><span class="toc-text">联合查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景："><span class="toc-text">应用场景：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入案例：查询部门编号-gt-90或邮箱编号包含a的员工信息"><span class="toc-text">引入案例：查询部门编号&gt;90或邮箱编号包含a的员工信息</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -581,18 +581,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="二-数学函数"><a href="#二-数学函数" class="headerlink" title="二 .数学函数"></a>二 .数学函数</h1><h2 id="1-round-四舍五入"><a href="#1-round-四舍五入" class="headerlink" title="1.round  四舍五入"></a>1.round  四舍五入</h2><pre><code class="sql">select ROUND(1.454);
-select round(-1.65);
-SELECT ROUND(1.3548,2);</code></pre>
-<h2 id="2-ceil-向上取整-返回大于等于改参数的最小整数"><a href="#2-ceil-向上取整-返回大于等于改参数的最小整数" class="headerlink" title="2.ceil 向上取整 返回大于等于改参数的最小整数"></a>2.ceil 向上取整 返回大于等于改参数的最小整数</h2><pre><code class="sql">select ceil(1.23);
-SELECT CEIL(-1.99);</code></pre>
-<h2 id="3-floor-向下取整-返回小于等于该参数的最大整数"><a href="#3-floor-向下取整-返回小于等于该参数的最大整数" class="headerlink" title="3.floor 向下取整 返回小于等于该参数的最大整数"></a>3.floor 向下取整 返回小于等于该参数的最大整数</h2><pre><code class="sql">select FLOOR(1.02);</code></pre>
-<h2 id="4-TRUNCATE-截断"><a href="#4-TRUNCATE-截断" class="headerlink" title="4.TRUNCATE 截断"></a>4.TRUNCATE 截断</h2><pre><code class="sql">select TRUNCATE(1.988524,3) as out_put;</code></pre>
-<h2 id="5-mod-取余"><a href="#5-mod-取余" class="headerlink" title="5.mod  取余"></a>5.mod  取余</h2><pre><code class="sql">select MOD(10,3);
-select mod(-10,3);
-select mod(10,-3);
-select  10%3;
-a - a/b*b; </code></pre>
+        <h1 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h1><p>UNION 联合 合并：将多条查询语句的结果和并为一个结果</p>
+<h2 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h2><p>查询语句1<br>union<br>查询语句2<br>UNION<br>….</p>
+<h2 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h2><p>要查询的结果来自于多个表，且多个表没有直接的连接关系 但查询的信息一般是一致的</p>
+<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><p>要求多条查询语句的查询列数是一致的<br>要求多条查询语句每一列的类型和顺序一致<br>union关键字默认去重 如果使用union all可以包含重复项</p>
+<h2 id="引入案例：查询部门编号-gt-90或邮箱编号包含a的员工信息"><a href="#引入案例：查询部门编号-gt-90或邮箱编号包含a的员工信息" class="headerlink" title="引入案例：查询部门编号&gt;90或邮箱编号包含a的员工信息"></a>引入案例：查询部门编号&gt;90或邮箱编号包含a的员工信息</h2><pre><code class="sql">SELECT *
+from employees e
+WHERE e.department_id &gt; 90 OR e.email LIKE &#39;%a%&#39;;
+
+SELECT *
+from employees e
+WHERE e.department_id &gt; 90 
+union 
+SELECT *
+from employees e
+where e.email LIKE &#39;%a%&#39;;
+
+
+SELECT *
+from employees e
+WHERE e.department_id &gt; 90 
+union  all
+SELECT *
+from employees e
+where e.email LIKE &#39;%a%&#39;;</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1939553481@qq.com </span>
@@ -606,12 +618,12 @@ a - a/b*b; </code></pre>
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-常见数学函数</p>
+    <p><span class="copy-title">文章标题:</span>MySQL基础-DQL-联合查询</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="范博">范博</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-07-24, 15:39:43</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-24, 15:44:30</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/" title="MySQL基础-DQL-常见数学函数">http://yoursite.com/2020/07/24/MySQL%E5%9F%BA%E7%A1%80-DQL-%E5%B8%B8%E8%A7%81%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-12, 22:12:32</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-12, 22:20:47</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" title="MySQL基础-DQL-联合查询">http://yoursite.com/2020/08/12/MySQL%E5%9F%BA%E7%A1%80-DQL-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
